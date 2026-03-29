@@ -1,5 +1,5 @@
 public class Peaklass {
-    static void main() {
-        // Test. does this work???
+
+    public static void main(String[] args) {
     }
 }
