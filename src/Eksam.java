@@ -48,8 +48,8 @@ public class Eksam {
         // Näita lõpptulemust
         if (lõplikSkoor >= LÄBIMISE_PIIR) {
             JOptionPane.showMessageDialog(null,
-                    "SA LÄBISID EKSAMI!!! :)\n\n" + getLäbimiseSõnum(teadmised, õnn),
-                    "Õnnitlused!",
+                    "SA LÄBISID EKSAMI!\n\n" + getLäbimiseSõnum(teadmised, õnn),
+                    "Õnnitlused :)",
                     JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null,
@@ -64,7 +64,7 @@ public class Eksam {
         if (teadmised >= LÄBIMISE_PIIR) {
             return "Selgub, et õppimine ei olegi scam.";
         }
-        else if (õnn > 15){
+        else if (õnn >= 15){
             return "Sa teadsid peaaegu mitte midagi, aga õnn oli sinu poolel.";
         }
         else {
@@ -74,14 +74,14 @@ public class Eksam {
 
     // Tagastab läbikukkumise sõnumi
     private String getLäbikukkumiseSünum(int teadmised, int õnn) {
-        if (teadmised < 20) {
+        if (teadmised < 25) {
             return "Sa veetsid rohkem aega Netfliksis kui märkmetes.\nŠokeeriv tulemus. Tõeliselt šokeeriv.";
         }
-        else if (õnn < -15) {
+        else if (teadmised >= LÄBIMISE_PIIR) {
             return "Kehv õnn. Sa proovisid päriselt, aga universum ütles ei.\nMitte sinu päev.";
         }
         else {
-            return "Sa olid nii enesekindel aga...enesekindlus  ≠ teadmised.\nKes oleks arvanud.";
+            return "Järgmine kord parem?";
         }
     }
 }

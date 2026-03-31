@@ -4,10 +4,14 @@ public class Test {
 
         System.out.println(opilane.getStatsText());
 
-        opilane.lisaTeadmised(-20);
-        opilane.lisaEnesekindlus(1000);
+        opilane.lisaTeadmised(40);
+        opilane.lisaEnesekindlus(10);
 
         System.out.println(opilane.getStatsText());
+
+        Eksam eksam = new Eksam();
+
+        eksam.sooritaEksam(opilane);
     }
 }
 
