@@ -20,7 +20,7 @@ public class Eksam {
         // Näita eksamieelset infot
         JOptionPane.showMessageDialog(null,
                 "EKSAMI PÄEV ON KÄES!\n\n" +
-                        "Sinu lõplikud statistikud:\n" +
+                        "Sinu teadmiste ja enesekindluse punktid:\n" +
                         õpilane.getStatsText(),
                 "Eksami päev!",
                 JOptionPane.INFORMATION_MESSAGE);
