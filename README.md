@@ -66,7 +66,7 @@ Pärast klasside valmimist testiti programmi ühiselt - mäng käivitati mitmeid
 Rühmatöö kirjeldus koostati ühiselt, arutades läbi iga punkti sisu. Mõlemad rühmaliikmed panustasid teksti kirjutamisse võrdselt.
 
 # Rühmaliikmete panus ja ajakulu
-### Viktoria Korjagina:
+### Viktorija Korjagina:
 `Tegevus.java`, `NõuandeGeneraator.java`, `Päev.java`; GitHub-i repositooriumi seadistamine; osalemine rühmatöö kirjelduse koostamisel.
 Ajakulu: orienteeruvalt 8 tundi.
 
