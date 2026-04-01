@@ -64,7 +64,7 @@ public class Eksam {
         if (teadmised >= LÄBIMISE_PIIR) {
             return "Selgub, et õppimine ei olegi scam.";
         }
-        else if (õnn >= 15){
+        else if (teadmised < LÄBIMISE_PIIR && õnn > 10) {
             return "Sa teadsid peaaegu mitte midagi, aga õnn oli sinu poolel.";
         }
         else {
