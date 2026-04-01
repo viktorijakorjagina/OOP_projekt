@@ -78,7 +78,7 @@ public class Peaklass {
         eksam.sooritaEksam(õpilane);
 
         JOptionPane.showMessageDialog(null,
-                "Täname mängimist Eksami Simulaatoit!",
+                "Täname mängimist Eksami Simulaatorit!",
                 "Mäng läbi",
                 JOptionPane.INFORMATION_MESSAGE);
     }

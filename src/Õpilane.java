@@ -8,11 +8,13 @@ public class Õpilane {
     private String nimi;
     private int teadmised;
     private int enesekindlus;
+    private int õppimisJärjestus; // mitu korda järjest on õpilane õppinud
 
     public Õpilane(String nimi) {
         this.nimi = nimi;
         this.teadmised = 0;
         this.enesekindlus = 0;
+        this.õppimisJärjestus = 0;
     }
 
     public String getNimi() {
@@ -25,6 +27,14 @@ public class Õpilane {
 
     public int getEnesekindlus() {
         return enesekindlus;
+    }
+
+    public int getÕppimisJärjestus() {
+        return õppimisJärjestus;
+    }
+
+    public void setÕppimisJärjestus(int õppimisJärjestus) {
+        this.õppimisJärjestus = õppimisJärjestus;
     }
 
     // Lisa teadmisi (ei lähe alla nulli)
@@ -45,6 +55,6 @@ public class Õpilane {
 
     // Tagastab hetkeseisu tekstina
     public String getStatsText() {
-        return "Teadmised: " + teadmised + "punkti\nEnesekindlus: " + enesekindlus + " punkti";
+        return "Teadmised: " + teadmised + " punkti\nEnesekindlus: " + enesekindlus + " punkti";
     }
 }

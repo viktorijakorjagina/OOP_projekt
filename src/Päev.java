@@ -11,10 +11,6 @@ public class Päev {
     // Päeva järjekorranumber (1 kuni 3)
     private int päevaNr;
 
-    // Loendur - mitu korda järjest on mängija valinud "Õppimine"
-    // Kui see jõuab 3-ni, blokeeritakse õppimine järgmisel korral
-    private int õppimisJärjestus;
-
     // Massiiv kõigist võimalikest tegevustest, mida mängija saab valida
     private Tegevus[] tegevused;
 
@@ -25,7 +21,6 @@ public class Päev {
     // @param päevaNr mitmenda päevaga on tegemist (1-3)
     public Päev(int päevaNr) {
         this.päevaNr = päevaNr;
-        this.õppimisJärjestus = 0; // päeva alguses pole keegi veel õppinud
 
         // Loome kõik 5 tegevust massiivi
         // Tegevus(nimi, kirjeldus, minTeadmised, maxTeadmised, enesekindlusMuutus)
@@ -97,8 +92,8 @@ public class Päev {
                 ;
 
         // Kui mängija on õppinud 3 korda järjest, lisame hoiatuse teksti
-        if (õppimisJärjestus >= 3) {
-            valikuteTekst += "\n\n Oled " + õppimisJärjestus + " korda järjest õppinud.\n"
+        if (õpilane.getÕppimisJärjestus() == 3) {
+            valikuteTekst += "\n\nOled 3 korda järjest õppinud.\n"
                     + "Puhka natuke!";
         }
 
@@ -145,7 +140,7 @@ public class Päev {
             }
 
             // Kontrollime kas õppimine on blokeeritud
-            if (valitud == 1 && õppimisJärjestus >= 3) {
+            if (valitud == 1 && õpilane.getÕppimisJärjestus() == 3) {
                 JOptionPane.showMessageDialog(null,
                         "Ei! Oled liiga kaua õppinud järjest!",
                         "Blokeeritud!",
@@ -183,9 +178,9 @@ public class Päev {
 
         // Uuendame õppimise järjestuse loenduri
         if (valitud == 1) {
-            õppimisJärjestus++;
+            õpilane.setÕppimisJärjestus(õpilane.getÕppimisJärjestus() + 1);
         } else {
-            õppimisJärjestus = 0;
+             õpilane.setÕppimisJärjestus(0);
         }
 
         // Koostame ja näitame tulemuse akna
