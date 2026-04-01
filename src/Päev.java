@@ -8,7 +8,7 @@ import java.util.Random;
 // kui mängija õpib rohkem kui 3 korda järjest, blokeeritakse see valik
 public class Päev {
 
-    // Päeva järjekorranumber (1 kuni 5)
+    // Päeva järjekorranumber (1 kuni 3)
     private int päevaNr;
 
     // Loendur - mitu korda järjest on mängija valinud "Õppimine"
@@ -22,7 +22,7 @@ public class Päev {
     private Random random = new Random();
 
     // Konstruktor - loob uue päeva ja seadistab kõik võimalikud tegevused
-    // @param päevaNr mitmenda päevaga on tegemist (1-5)
+    // @param päevaNr mitmenda päevaga on tegemist (1-3)
     public Päev(int päevaNr) {
         this.päevaNr = päevaNr;
         this.õppimisJärjestus = 0; // päeva alguses pole keegi veel õppinud
@@ -89,11 +89,11 @@ public class Päev {
                 "Päev " + päevaNr + "  |  Valik " + valikNr + "/3\n\n" +
                         õpilane.getStatsText() + "\n\n" +
                         "Mida teed?\n\n" +
-                        "1 - Õppimine     (+10 kuni +20 teadmised, +5 enesekindlus)\n" +
-                        "2 - Loengu vaatamine     (+0 kuni +10 teadmised, +10 enesekindlus)\n" +
-                        "3 - Ülesannete lahendamine     (+10 kuni +20 teadmised, +5 enesekindlus)\n" +
-                        "4 - 'Ainult üks episood'      (0 teadmised, -5 enesekindlus)\n" +
-                        "5 - Puhkamine     (0 teadmised, -5 enesekindlus)"
+                        "1 - Õppimine\n" +
+                        "2 - Loengu vaatamine\n" +
+                        "3 - Ülesannete lahendamine\n" +
+                        "4 - 'Ainult üks episood'\n" +
+                        "5 - Puhkamine"
                 ;
 
         // Kui mängija on õppinud 3 korda järjest, lisame hoiatuse teksti

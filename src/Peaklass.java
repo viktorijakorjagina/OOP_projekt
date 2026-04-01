@@ -4,7 +4,7 @@ import javax.swing.*;
  * Peaklass - Eksami Simulaatori käivitamine.
  *
  * EKSAMI SIMULAATOR - Prokrastineeriva üliõpilase ellujäämismäng.
- * Sul on 5 päeva eksamiks valmistumiseks.
+ * Sul on 3 päeva eksamiks valmistumiseks.
  * Õpi, prokrastineeri ja looda parimat.
  *
  * Autorid: Maria Elisa Vassiljeva, Viktorija Korjagina
@@ -18,7 +18,7 @@ public class Peaklass {
                 "EKSAMI SIMULAATOR\n" +
                         "Prokrastineeriva Üliõpilase Ellujäämismäng\n\n" +
                         "KUIDAS MÄNGIDA:\n" +
-                        "   - Sul on 5 päeva enne ekasmit.\n" +
+                        "   - Sul on 3 päeva enne ekasmit.\n" +
                         "   - Iga päev teed 3 valikut (õppimine, puhkamine jne).\n" +
                         "   - Teadmised = mida sa tegelikult tead.\n" +
                         "   - Enesekindlus = mida sa arvad, et tead.\n" +
@@ -45,17 +45,17 @@ public class Peaklass {
 
         JOptionPane.showMessageDialog(null,
                 "Tere tulemast, " + õpilane.getNimi() + "!\n\n" +
-                        "Eksamini on jäänud 5 päeva.\nPalju edu!",
+                        "Eksamini on jäänud 3 päeva.\nPalju edu!",
                 "Mäng algab!",
                 JOptionPane.INFORMATION_MESSAGE);
 
-        // Käivita 5 päeva
-        for (int päevaNr = 1; päevaNr < 5; päevaNr++) {
+        // Käivita 3 päeva
+        for (int päevaNr = 1; päevaNr <= 3; päevaNr++) {
 
             // Päeva alguse nõuanne
             JOptionPane.showMessageDialog(null,
                     "PÄEV " + päevaNr + "\n\n" +
-                            "Päeva nõuanne:\n\"" + nõuandeGeneraator.getNõuanne(),
+                            "Päeva nõuanne:\n\"" + nõuandeGeneraator.getNõuanne() + "\"",
                     "Mäng algab!",
                     JOptionPane.INFORMATION_MESSAGE);
 
@@ -68,7 +68,7 @@ public class Peaklass {
                     "Päev " + päevaNr + " on läbi!\n\n" +
                     "Sinu praegune seisund:\n" +
                     õpilane.getStatsText()+
-                    (päevaNr < 5 ? "\n\nEksamini on jäänud " + (5 - päevaNr) + " päeva." : "\n\nHomme on eksamipäev!"),
+                    (päevaNr < 3 ? "\n\nEksamini on jäänud " + (3 - päevaNr) + " päeva." : "\n\nHomme on eksamipäev!"),
                     "Päeva lõpp",
                     JOptionPane.INFORMATION_MESSAGE);
         }
