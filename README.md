@@ -6,10 +6,10 @@
 
 # Projekti kirjeldus
 ### Programmi eesmärk
-"Eksami Simulaator" on interaktiivne tekstipõhine mäng, milles mängija kehastab üliõpilast, kellel on eksam tulemas. Mängu eesmärk on eksam edukalt läbida - selleks tuleb 5 mängupäeva jooksul teha õigeid valikuid ning koguda piisavalt teadmispunkte. Mängija otsused mõjutavad kahte näitajat: teadmisi ja enesekindlust. Lõplik eksamitulemus sõltub kogutud teadmistest, enesekindluse boonusest ning juhuslikust õnnetegurist. Eksami läbimiseks on vaja saavutada vähemalt 50 punkti.
+"Eksami Simulaator" on interaktiivne tekstipõhine mäng, milles mängija kehastab üliõpilast, kellel on eksam tulemas. Mängu eesmärk on eksam edukalt läbida - selleks tuleb 3 mängupäeva jooksul teha õigeid valikuid ning koguda piisavalt teadmispunkte. Mängija otsused mõjutavad kahte näitajat: teadmisi ja enesekindlust. Lõplik eksamitulemus sõltub kogutud teadmistest, enesekindluse boonusest ning juhuslikust õnnetegurist. Eksami läbimiseks on vaja saavutada vähemalt 50 punkti.
 
 ### Programmi üldine töö
-Mäng kestab 5 mängupäeva. Iga päev teeb mängija 5 valikut, mida teha: õppida, vaadata loenguvideot, lahendada ülesandeid, vaadata Netflixi või puhata. Igal valikul on erinev mõju kahele näitajale: teadmistele ja enesekindlusele. Pärast 5. päeva toimub eksam, kus lisandub juhusliku õnneteguri mõju. Mängija läbib eksami, kui lõplik tulemus on 50 punkti või rohkem.
+Mäng kestab 3 mängupäeva. Iga päev teeb mängija 5 valikut, mida teha: õppida, vaadata loenguvideot, lahendada ülesandeid, vaadata Netflixi või puhata. Igal valikul on erinev mõju kahele näitajale: teadmistele ja enesekindlusele. Pärast 3. päeva toimub eksam, kus lisandub juhusliku õnneteguri mõju. Mängija läbib eksami, kui lõplik tulemus on 50 punkti või rohkem.
 
 Programm kasutab kasutajaliidesena JOptionPane’i aknaid - kõik küsimused, valikud ja tulemused kuvatakse hüpikakendena. Mängija sisestab oma valiku (numbri 1–5) sisestusaknasse. Kui mängija valib "õppimise" 3 korda järjest, blokeeritakse see valik ning programm nõuab teise tegevuse valimist.
 
@@ -19,12 +19,12 @@ Programm kasutab kasutajaliidesena JOptionPane’i aknaid - kõik küsimused, va
 3. Iga päev kuvatakse kõigepealt nõuandeaken, seejärel valikuteaken.
 4. Sisestage valikuaknasse number 1-5 ja vajutage OK.
 5. Pärast igat valikut kuvatakse tulemuseaken, kus on näha saadud punktid.
-6. Pärast 5. mängupäeva toimub eksam - tulemus kuvatakse automaatselt.
+6. Pärast 3. mängupäeva toimub eksam - tulemus kuvatakse automaatselt.
 
 # Klasside kirjeldus
 ### Peaklass.java
-`Peaklass` on programmi käivituspunkt, mis sisaldab meetodit `main()`. See korraldab kogu mängu üldise kulgu: kuvab tervitussõnumi, küsib mängija nime, loob `Õpilane` ja `NõuandeGeneraator` objektid, käivitab 5 päeva tsükli ning kutsub lõpuks välja eksami. Peaklass ühendab kõik teised klassid ühtseks tervikuks.
-Olulisemad osad: `main()` meetod kogu mängu juhtimiseks, `JOptionPane.showInputDialog()` nime küsimiseks, for-tsükkel 5 päeva läbimiseks, Eksam objekti loomine ning eksami käivitamine.
+`Peaklass` on programmi käivituspunkt, mis sisaldab meetodit `main()`. See korraldab kogu mängu üldise kulgu: kuvab tervitussõnumi, küsib mängija nime, loob `Õpilane` ja `NõuandeGeneraator` objektid, käivitab 3 päeva tsükli ning kutsub lõpuks välja eksami. Peaklass ühendab kõik teised klassid ühtseks tervikuks.
+Olulisemad osad: `main()` meetod kogu mängu juhtimiseks, `JOptionPane.showInputDialog()` nime küsimiseks, for-tsükkel 3 päeva läbimiseks, Eksam objekti loomine ning eksami käivitamine.
 
 ### Õpilane.java
 Klass `Õpilane` esindab mängijat ning hoiab tema andmeid. Klassil on kolm isendivälja: nimi (mängija nimi), teadmised (tegelikud teadmised, mis mõjutavad eksami tulemust) ja enesekindlus (mängija hinnang oma valmisolekule). Mõlemad punktinäitajad algavad nullist ega lange alla nulli.
@@ -51,7 +51,7 @@ Olulisemad meetodid: `NõuandeGeneraator()` - konstruktor; `getNõuanne()` - tag
 Kogu projekt oli koostöös, kohtudes regulaarselt Tartu Ülikooli Delta õppehoones. Iga kohtumine kestis vähemalt 2 tundi ning kogu projekti teostamisele kulus orienteeruvalt 16 tundi tööd.
 
 ### 1. etapp - ideede genereerimine ja planeerimine
-Esimeses kohtumises arutati võimalikke projektiteemasid. Otsustati luua humoorika suhtumisega üliõpilassimulatsioon, kuna see võimaldas kasutada kõiki nõutavaid programmeerimismõisteid ning tundus mõlemale rühmaliikmetele huvitav ja motiveeriv. Pandi paika programmi üldine kontseptsioon: 5 mängupäeva, 2 näitajat (teadmised ja enesekindlus) ning lõplik eksam juhusliku õnneteguriga. Koostati programmi struktuur ning otsustati klasside arv ja nende vastutusalad. Mõlemad rühmaliikmed osalesid selles etapis võrdselt.
+Esimeses kohtumises arutati võimalikke projektiteemasid. Otsustati luua humoorika suhtumisega üliõpilassimulatsioon, kuna see võimaldas kasutada kõiki nõutavaid programmeerimismõisteid ning tundus mõlemale rühmaliikmetele huvitav ja motiveeriv. Pandi paika programmi üldine kontseptsioon: 3 mängupäeva, 2 näitajat (teadmised ja enesekindlus) ning lõplik eksam juhusliku õnneteguriga. Koostati programmi struktuur ning otsustati klasside arv ja nende vastutusalad. Mõlemad rühmaliikmed osalesid selles etapis võrdselt.
 
 ### 2. etapp - töö jaotamine ja GitHub-i seadistamine
 Lepiti kokku tööjaotuses. Viktorija võttis endale klassid Tegevus, NõuandeGeneraator ja Päev. Maria Elisa võttis endale klassid Õpilane, Eksam ja Peaklass. Seadistati ühine GitHub-i repositoorium, kus Viktorija töötas branchi`s "viktoria" ja Maria Elisa branchi`s "mariaelisa". Kokku lepiti, et rühmaliikmed abistavad teineteist vajadusel ning võivad teha täiendavaid muudatusi üksteise koodis, kui see on vajalik vigade parandamiseks või ühtlustamiseks.
