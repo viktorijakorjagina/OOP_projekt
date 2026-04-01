@@ -1,7 +1,7 @@
 import java.util.Random;
 
-// Klass NouandeGeneraator annab mängijale iga päev juhusliku nõuande
-public class NouandeGeneraator {
+// Klass NõuandeGeneraator annab mängijale iga päev juhusliku nõuande
+public class NõuandeGeneraator {
 
     private Random random = new Random();
 
