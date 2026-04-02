@@ -28,7 +28,7 @@ Olulisemad osad: `main()` meetod kogu mängu juhtimiseks, `JOptionPane.showInput
 
 ### Õpilane.java
 Klass `Õpilane` esindab mängijat ning hoiab tema andmeid. Klassil on kolm isendivälja: nimi (mängija nimi), teadmised (tegelikud teadmised, mis mõjutavad eksami tulemust) ja enesekindlus (mängija hinnang oma valmisolekule). Mõlemad punktinäitajad algavad nullist ega lange alla nulli.
-Olulisemad meetodid: `Õpilane(String nimi)` - konstruktor, mis loob uue mängija objekti; `getNimi()`, `getTeadmised()`, `getEnesekindlus()` - getterid väljade lugemiseks; `lisaTeadmised(int kogus)` - suurendab teadmiste näitajat, tagades et see ei lange alla nulli; `lisaEnesekindlus(int kogus)` - muudab enesekindluse näitajat, tagades et see ei lange alla nulli; `getStatsText()` - tagastab mängija hetkeseisu tekstina kuvamiseks aknas.
+Olulisemad meetodid: `Õpilane(String nimi)` - konstruktor, mis loob uue mängija objekti; `getNimi()`, `getTeadmised()`, `getEnesekindlus()`, `getÕppimisJärjestus()` - getterid väljade lugemiseks; `lisaTeadmised(int kogus)` - suurendab teadmiste näitajat, tagades et see ei lange alla nulli; `lisaEnesekindlus(int kogus)` - muudab enesekindluse näitajat, tagades et see ei lange alla nulli; `getStatsText()` - tagastab mängija hetkeseisu tekstina kuvamiseks aknas.
 
 ### Tegevus.java
 Klass `Tegevus` esindab ühte tegevust, mida mängija saab valida (näiteks õppimine või puhkamine). Igal tegevusel on nimi, kirjeldus, teadmiste muutuse vahemik (minimaalne ja maksimaalne väärtus) ning fikseeritud enesekindluse muutus. Teadmiste kasv on juhuslik - iga kord võib tulemus olla erinev.
@@ -47,9 +47,6 @@ Klass `NõuandeGeneraator` kuvab mängijale iga päeva alguses juhusliku nõuand
 Olulisemad meetodid: `NõuandeGeneraator()` - konstruktor; `getNõuanne()` - tagastab juhusliku nõuande massiivist, kasutades meetodit `random.nextInt(nõuanded.length)`.
 
 # Projekti tegemise protsess
-### Etapid ja rühmaliikmete osalemine
-Kogu projekt oli koostöös, kohtudes regulaarselt Tartu Ülikooli Delta õppehoones. Iga kohtumine kestis vähemalt 2 tundi ning kogu projekti teostamisele kulus orienteeruvalt 16 tundi tööd.
-
 ### 1. etapp - ideede genereerimine ja planeerimine
 Esimeses kohtumises arutati võimalikke projektiteemasid. Otsustati luua humoorika suhtumisega üliõpilassimulatsioon, kuna see võimaldas kasutada kõiki nõutavaid programmeerimismõisteid ning tundus mõlemale rühmaliikmetele huvitav ja motiveeriv. Pandi paika programmi üldine kontseptsioon: 3 mängupäeva, 2 näitajat (teadmised ja enesekindlus) ning lõplik eksam juhusliku õnneteguriga. Koostati programmi struktuur ning otsustati klasside arv ja nende vastutusalad. Mõlemad rühmaliikmed osalesid selles etapis võrdselt.
 
@@ -77,8 +74,9 @@ Ajakulu: orienteeruvalt 8 tundi.
 # Tegemise mured
 1. Git ja GitHub. Alguses valmistas raskusi harude (branch) loogika mõistmine ning muudatuste omavaheline sünkroonimine. Eriti keeruline oli olukord, kus mõlemad rühmaliikmed muutsid sama faili samaaegselt, mis nõudis konfliktide lahendamist.
 2. `JOptionPane` kasutamine oli esmakordne kogemus. Tuli õppida eristama meetodeid `showInputDialog()`, `showMessageDialog()` ja `showConfirmDialog()` ning lisaks kontrollida, kas kasutaja sulges akna ilma midagi sisestamata (null-kontroll).
-3. Klasside omavaheline suhtlus valmistas alguses raskusi - näiteks see, kuidas `Päev` peab samaaegselt kasutama nii `Tegevus` kui ka `Õpilane` objekte. See nõudis planeerimist, millised meetodid peavad olema avalikud ja millised privaatsed.
+3. Klasside omavahelise struktuuri planeerimine valmistas alguses raskusi. Eriti keeruline oli läbi mõelda, kuidas klassid omavahel suhtlevad ja milline peaks olema nende vastutus. Näiteks tuli otsustada, kuidas Päev kasutab samaaegselt nii Tegevus kui ka Õpilane objekte ning kuidas andmed nende vahel liiguvad. See nõudis kogu programmi ülesehituse läbimõtlemist enne realiseerimist.
 4. `try-catch` ploki kasutamine `NumberFormatException`'i püüdmiseks oli uus kontseptsioon, mida tuli eraldi uurida.
+5. Projekti käigus ilmnes viga õppimise järjestuse jälgimisel. Alguses asus õppimisjärjestus isendiväljana klassis Päev. Kuna iga mängupäeva jaoks loodi uus Päev isend, siis vastav loendur lähtestati iga kord automaatselt väärtusele 0 (isendiväljade vaikimisi algväärtus). Selle tulemusena ei töötanud õppimise 3-kordse järjestuse blokeerimise mehhanism korrektselt. Probleemi lahendamiseks viidi õppimisjärjestus isendiväljaks klassi Õpilane, et selle väärtus säiliks kogu mängu vältel. Klass Päev muudeti vastavalt nii, et see kasutab väärtuse lugemiseks ja muutmiseks meetodeid getÕppimisjärjestus() ja setÕppimisjärjestus(). Pärast muudatust töötab blokeerimise loogika korrektselt üle kõikide mängupäevade.
 
 # Hinnang lõpptulemusele
 ### Millega saime hästi hakkama
