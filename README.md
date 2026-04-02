@@ -92,7 +92,7 @@ Klasse testiti eraldi, lisades ajutiselt `Peaklass.java`-sse väikeseid testikoo
 1. `Tegevus`: loodi `Tegevus` objekt ning kutsuti meetodit `getTeadmistekasv()` 20 korda järjest, kontrollides, et tulemused jäävad alati lubatud vahemikku (näiteks 10–20 õppimise puhul). Kontrolliti ka, et meetod `getEnesekindlusMuutus()` tagastab alati korrektse fikseeritud väärtuse.
 2. `Õpilane`: loodi `Õpilane` objekt ning kutsuti meetodeid `lisaTeadmised()` ja `lisaEnesekindlus()` nii positiivsete kui negatiivsete väärtustega. Kontrolliti, et kumbki näitaja ei lange alla nulli.
 3. `NõuandeGeneraator`: kutsuti meetodit `getNõuanne()` korduvalt ning kontrolliti, et tagastatakse alati sisukas tekst ning erinevatel kordadel ilmuvad erinevad nõuanded.
-Eksam: testiti kolme erinevat stsenaariumi - kõrged teadmised, madalad teadmised ning keskmised teadmised erineva õnnefaktoriga. Kontrolliti, et lõplik skoor arvutatakse vastavalt kehtestatud valemile korrektselt.
+4. `Eksam`: testiti kolme erinevat stsenaariumi - kõrged teadmised, madalad teadmised ning keskmised teadmised erineva õnnefaktoriga. Kontrolliti, et lõplik skoor arvutatakse vastavalt kehtestatud valemile korrektselt.
 
 ### Kogu programmi testimine
 Programmi testiti tervikuna, mängides läbi mitu täismängu erinevate strateegiatega.
