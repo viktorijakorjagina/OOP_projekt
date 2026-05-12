@@ -1,14 +1,13 @@
-/**
- * Klass Õpilane hoiab mängija andmed:
- * teadmised (päris teadmised) ja enesekindlus (kui valmis ta arvab end olevat).
- */
-
+// Klass Õpilane hoiab mängija andmed:
+// nimi, teadmised, enesekindlus ja õppimise järjestus
 public class Õpilane {
 
     private String nimi;
     private int teadmised;
     private int enesekindlus;
-    private int õppimisJärjestus; // mitu korda järjest on õpilane õppinud
+
+    // Näitab, mitu korda järjest mängija valis õppimise
+    private int õppimisJärjestus;
 
     public Õpilane(String nimi) {
         this.nimi = nimi;
@@ -29,15 +28,17 @@ public class Õpilane {
         return enesekindlus;
     }
 
+    // Tagastab õppimise järjestuse
     public int getÕppimisJärjestus() {
         return õppimisJärjestus;
     }
 
+    // Muudab õppimise järjestust
     public void setÕppimisJärjestus(int õppimisJärjestus) {
         this.õppimisJärjestus = õppimisJärjestus;
     }
 
-    // Lisa teadmisi (ei lähe alla nulli)
+    // Lisa teadmisi, aga teadmised ei lähe alla nulli
     public void lisaTeadmised(int n) {
         this.teadmised += n;
         if (this.teadmised < 0) {
@@ -45,7 +46,7 @@ public class Õpilane {
         }
     }
 
-    // Lisa enesekindlust (ei lähe alla nulli)
+    // Lisa enesekindlust, aga enesekindlus ei lähe alla nulli
     public void lisaEnesekindlus(int n) {
         this.enesekindlus += n;
         if (this.enesekindlus < 0) {
@@ -55,6 +56,7 @@ public class Õpilane {
 
     // Tagastab hetkeseisu tekstina
     public String getStatsText() {
-        return "Teadmised: " + teadmised + " punkti\nEnesekindlus: " + enesekindlus + " punkti";
+        return "Teadmised: " + teadmised + " punkti\n" +
+                "Enesekindlus: " + enesekindlus + " punkti";
     }
 }
