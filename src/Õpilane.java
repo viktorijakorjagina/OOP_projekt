@@ -6,6 +6,8 @@ public class Õpilane {
     private int teadmised;
     private int enesekindlus;
 
+    // Loendur - mitu korda järjest on mängija valinud "Õppimine"
+    // Kui see jõuab 3-ni, blokeeritakse õppimine järgmisel korral
     // Näitab, mitu korda järjest mängija valis õppimise
     private int õppimisJärjestus;
 
