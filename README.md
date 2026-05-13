@@ -1,4 +1,4 @@
-# 1.rühmatöö kirjeldus
+# Rühmatöö kirjeldus
 
 # EKSAMI SIMULAATOR
 
