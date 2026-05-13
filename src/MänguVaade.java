@@ -9,8 +9,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
-// See klass loob põhilise mänguakna.
-// Siin on nupud, punktid, progressiribad ja mängu logi.
+// See klass loob põhilise mänguakna
+// Siin on nupud, punktid, progressiribad ja mängu logi
 public class MänguVaade {
 
     private MänguKontrollija kontrollija;
@@ -27,6 +27,9 @@ public class MänguVaade {
     private Button netflixNupp;
     private Button puhkusNupp;
 
+    // See nupp ilmub nähtavale alles siis, kui eksam on tehtud
+    private Button uuestiNupp;
+
     public MänguVaade(MänguKontrollija kontrollija) {
         this.kontrollija = kontrollija;
     }
@@ -38,7 +41,13 @@ public class MänguVaade {
 
         infoLabel = new Label();
         statsLabel = new Label();
+
         nõuanneLabel = new Label();
+
+        // Lubame nõuande tekstil minna mitmele reale
+        nõuanneLabel.setWrapText(true);
+        nõuanneLabel.setMaxWidth(480);
+
         Kujundus.tavalineTekst(infoLabel);
         Kujundus.tavalineTekst(statsLabel);
         Kujundus.tavalineTekst(nõuanneLabel);
@@ -50,17 +59,26 @@ public class MänguVaade {
 
         looNupud();
 
-        VBox nuppudaKast = new VBox(10, õppimineNupp, loengNupp, ülesandedNupp, netflixNupp, puhkusNupp);
+        VBox nuppudeKast = new VBox(
+                10,
+                õppimineNupp,
+                loengNupp,
+                ülesandedNupp,
+                netflixNupp,
+                puhkusNupp,
+                uuestiNupp
+        );
 
         logiAla = new TextArea();
         logiAla.setEditable(false);
         logiAla.setWrapText(true);
 
         VBox vasakPool = looVasakPool();
-        VBox paremPool = looParemPool(nuppudaKast);
+        VBox paremPool = looParemPool(nuppudeKast);
 
         HBox sisu = new HBox(20, vasakPool, paremPool);
         sisu.setPadding(new Insets(25));
+
         // Akna suuruse muutumisel sisu venitamine
         HBox.setHgrow(vasakPool, Priority.ALWAYS);
         HBox.setHgrow(paremPool, Priority.ALWAYS);
@@ -71,18 +89,20 @@ public class MänguVaade {
 
         Scene stseen = new Scene(juur, 950, 620);
         lisaKlaviatuuriJuhtimine(stseen);
+
         return stseen;
     }
 
     // Loob mänguakna parema poole
-    private VBox looParemPool(VBox nuppudaKast) {
+    private VBox looParemPool(VBox nuppudeKast) {
         VBox paremPool = new VBox(
                 14,
                 new Label("Valikud:"),
-                nuppudaKast,
+                nuppudeKast,
                 new Label("Mängu logi:"),
                 logiAla
         );
+
         Kujundus.kaart(paremPool);
         return paremPool;
     }
@@ -100,6 +120,10 @@ public class MänguVaade {
                 enesekindlusRiba,
                 statsLabel
         );
+
+        // Vasak pool saab kindlama laiuse, et nõuanne mahuks paremini ära
+        vasakPool.setMinWidth(420);
+
         Kujundus.kaart(vasakPool);
         return vasakPool;
     }
@@ -112,11 +136,19 @@ public class MänguVaade {
         netflixNupp = looValikuNupp("4 - Ainult üks episood");
         puhkusNupp = looValikuNupp("5 - Puhkamine");
 
+        // Uue mängu alustamise nupp
+        uuestiNupp = looValikuNupp("Alusta uuesti");
+        uuestiNupp.setVisible(false);
+        uuestiNupp.setManaged(false);
+
         õppimineNupp.setOnAction(e -> kontrollija.teeValik(1));
         loengNupp.setOnAction(e -> kontrollija.teeValik(2));
         ülesandedNupp.setOnAction(e -> kontrollija.teeValik(3));
         netflixNupp.setOnAction(e -> kontrollija.teeValik(4));
         puhkusNupp.setOnAction(e -> kontrollija.teeValik(5));
+
+        // Kui mäng on lõppenud, saab selle nupuga minna tagasi algusaknasse
+        uuestiNupp.setOnAction(e -> kontrollija.alustaUuesti());
     }
 
     // Loob ühe nupu
@@ -157,12 +189,16 @@ public class MänguVaade {
         logiAla.appendText(tekst + "\n");
     }
 
-    // Pärast eksamit ei saa enam nuppe vajutada
+    // Pärast eksamit ei saa enam tavalisi tegevusi valida
+    // Näitame uut nuppu, millega saab mängu uuesti alustada
     public void keelaNupud() {
         õppimineNupp.setDisable(true);
         loengNupp.setDisable(true);
         ülesandedNupp.setDisable(true);
         netflixNupp.setDisable(true);
         puhkusNupp.setDisable(true);
+
+        uuestiNupp.setVisible(true);
+        uuestiNupp.setManaged(true);
     }
 }
