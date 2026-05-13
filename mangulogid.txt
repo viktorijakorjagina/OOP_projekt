@@ -58,3 +58,39 @@ SA LÄBISID EKSAMI!
 Päev 4 lõppes.
 LÕPPTULEMUS: Masha - 83 punkti.
 SA LÄBISID EKSAMI!
+
+UUS MÄNG: Masha
+Päev 1, valik 1: Õppimine | teadmised 12, enesekindlus 5. 
+Päev 1, valik 2: Loengu vaatamine | teadmised 5, enesekindlus 10. 
+Päev 1, valik 3: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 1 lõppes.
+Päev 2, valik 1: Ainult üks episood | teadmised 0, enesekindlus -8. Vaatasid 2 episoodi. Ups.
+Päev 2, valik 2: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 2, valik 3: Ülesannete lahendamine | teadmised 11, enesekindlus 5. 
+Päev 2 lõppes.
+Päev 3, valik 1: Ainult üks episood | teadmised 0, enesekindlus -8. Vaatasid 2 episoodi. Ups.
+Päev 3, valik 2: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 3, valik 3: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 3 lõppes.
+LÕPPTULEMUS: Masha - 11 punkti.
+SA KUKKUSID EKSAMI LÄBI...
+
+UUS MÄNG: m
+
+UUS MÄNG: Masha
+Päev 1, valik 1: Õppimine | teadmised 20, enesekindlus 5. 
+Päev 1, valik 2: Õppimine | teadmised 10, enesekindlus 5. 
+Päev 1, valik 3: Loengu vaatamine | teadmised 3, enesekindlus 10. 
+Päev 1 lõppes.
+Päev 2, valik 1: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 2, valik 2: Õppimine | teadmised 20, enesekindlus 5. 
+Päev 2, valik 3: Õppimine | teadmised 16, enesekindlus 5. 
+Päev 2 lõppes.
+Päev 3, valik 1: Loengu vaatamine | teadmised 1, enesekindlus 10. 
+Päev 3, valik 2: Ülesannete lahendamine | teadmised 13, enesekindlus 5. 
+Päev 3, valik 3: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 3 lõppes.
+LÕPPTULEMUS: Masha - 75 punkti.
+SA LÄBISID EKSAMI!
+
+UUS MÄNG: iiojpj

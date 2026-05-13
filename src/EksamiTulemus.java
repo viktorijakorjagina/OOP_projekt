@@ -22,6 +22,9 @@ public class EksamiTulemus {
     public String getTulemusTekst() {
         return tulemusTekst;
     }
+    public int getÕnn() {
+        return õnn;
+    }
 
     // See meetod teeb eksami tulemusest pika teksti
     public String getTäisTekst() {
