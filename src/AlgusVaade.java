@@ -22,12 +22,17 @@ public class AlgusVaade {
         Kujundus.pealkiri(pealkiri);
 
         Label kirjeldus = new Label(
-                "Sul on 3 päeva enne ekasmit.\n" +
-                "Iga päev teed 3 valikut (õppimine, puhkamine jne).\n" +
-                "Läbimiseks vajad 50+ punkti.\n" +
+                "KUIDAS MÄNGIDA:\n" +
+                "   - Sul on 3 päeva enne ekasmit.\n" +
+                "   - Iga päev teed 3 valikut (õppimine, puhkamine jne).\n" +
+                "   - Teadmised = mida sa tegelikult tead.\n" +
+                "   - Enesekindlus = mida sa arvad, et tead.\n" +
+                "   - Eksami päeval mängib rolli ka õnn.\n" +
+                "   - Läbimiseks vajad 50+ punkti.\n\n" +
                 "Juhtimine: \n" +
                 "- hiirega saab vajutada nuppe\n" +
-                "- klaviatuuril saab kasutada klahve 1, 2, 3, 4 ja 5"
+                "- klaviatuuril saab kasutada klahve 1, 2, 3, 4 ja 5\n\n" +
+                "Sisesta oma nimi:"
         );
         Kujundus.tavalineTekst(kirjeldus);
 

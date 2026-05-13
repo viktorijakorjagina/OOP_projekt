@@ -50,11 +50,21 @@ public class MänguKontrollija {
             mängLõppenud = false;
 
             FailiHaldur.alustaUutMangu(õpilane.getNimi());
+            näitaMänguAlguseTeadet();
             avaMänguAken();
 
         } catch (IllegalArgumentException e) {
             näitaHoiatus("Vale sisend", e.getMessage());
         }
+    }
+
+    // Näitab teadet siis, kui mäng päriselt algab.
+    private void näitaMänguAlguseTeadet() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Mäng algab!");
+        alert.setHeaderText("Tere tulemast, " + õpilane.getNimi() + "!");
+        alert.setContentText("Eksamini on jäänud 3 päeva.\n" + "Palju edu!");
+        alert.showAndWait();
     }
 
     // Avab põhilise mänguakna
@@ -107,6 +117,7 @@ public class MänguKontrollija {
             õpilane.lisaTeadmised(teadmised);
             õpilane.lisaEnesekindlus(enesekindlus);
             uuendaÕppimiseJärjestust(valik);
+            näitaTegevuseTulemust(tegevus, teadmised, enesekindlus, lisaTekst);
 
             String logiRida = "Päev " + päevaNr +
                     ", valik " + valikNr +
@@ -130,13 +141,28 @@ public class MänguKontrollija {
         }
     }
 
+    // Näitab pärast iga tegevust väikest tulemusakent
+    private void näitaTegevuseTulemust(Tegevus tegevus, int teadmised, int enesekindlus, String lisaTekst) {
+        String tekst =
+                tegevus.getKirjeldus() + "\n" + lisaTekst + "\n\n" +
+                "Teadmised: " + (teadmised >= 0 ? "+" : "") + teadmised + "\n" +
+                "Enesekindlus: " + (enesekindlus >= 0 ? "+" : "") + enesekindlus;
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Tulemus");
+        alert.setHeaderText(tegevus.getNimi());
+        alert.setContentText(tekst);
+        alert.showAndWait();
+    }
+
     // Liigub järgmise päeva või eksamini
     private void liiguEdasi() {
         valikNr++;
 
         if (valikNr > 3) {
-            String paevaLopuRida = "Päev " + päevaNr + " lõppes.";
+            näitaPäevaLõpuTeadet();
 
+            String paevaLopuRida = "Päev " + päevaNr + " lõppes.";
             mänguVaade.lisaLogiTekst(paevaLopuRida);
             FailiHaldur.kirjutaLogisse(paevaLopuRida);
 
@@ -151,11 +177,31 @@ public class MänguKontrollija {
         }
     }
 
+    // Näitab päeva lõpus kokkuvõtet
+    private void näitaPäevaLõpuTeadet() {
+        String tekst =
+                "Päev " + päevaNr + " on läbi!\n\n" +
+                "Sinu praegune seisund:\n" + õpilane.getStatsText();
+
+        if (päevaNr < 3) {
+            tekst += "\n\nEksamini on jäänud " + (3 - päevaNr) + " päeva.";
+        } else {
+            tekst += "\n\nHomme on eksamipäev!";
+        }
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Päeva lõpp");
+        alert.setHeaderText("Päev " + päevaNr + " lõppes");
+        alert.setContentText(tekst);
+        alert.showAndWait();
+    }
+
     // Arvutab eksami tulemuse
     private void sooritaEksam() {
         // Märgime mängu lõppenuks
         // Pärast seda teeValik() enam uusi valikuid ei töötle
         mängLõppenud = true;
+        näitaEksamiPäevaTeadet();
 
         EksamiArvutaja arvutaja = new EksamiArvutaja();
         EksamiTulemus tulemus = arvutaja.arvutaTulemus(õpilane);
@@ -168,10 +214,55 @@ public class MänguKontrollija {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Eksami tulemus");
         alert.setHeaderText(tulemus.getTulemusTekst());
-        alert.setContentText(tulemus.getTäisTekst());
+        alert.setContentText(
+                tulemus.getTäisTekst() + "\n\n" +
+                getLõpuSõnum(õpilane.getTeadmised(), tulemus.getÕnn(), tulemus.getLõplikSkoor())
+        );
         alert.showAndWait();
 
         mänguVaade.keelaNupud();
+    }
+
+    // Valib lõpusõnumi selle järgi, kas mängija läbis eksami või kukkus läbi
+    private String getLõpuSõnum(int teadmised, int õnn, int lõplikSkoor) {
+        if (lõplikSkoor >= 50) {
+            return getLäbimiseSõnum(teadmised, õnn);
+        } else {
+            return getLäbikukkumiseSõnum(teadmised, õnn);
+        }
+    }
+
+    // Tagastab läbimise sõnumi
+    private String getLäbimiseSõnum(int teadmised, int õnn) {
+        if (teadmised >= 50) {
+            return "Selgub, et õppimine ei olegi scam.";
+        } else if (õnn >= 15) {
+            return "Sa teadsid peaaegu mitte midagi, aga õnn oli sinu poolel.";
+        } else {
+            return "Sa libisesid napilt läbi. Aga hei - läbitud on läbitud.";
+        }
+    }
+
+    // Tagastab läbikukkumise sõnumi.
+    private String getLäbikukkumiseSõnum(int teadmised, int õnn) {
+        if (teadmised < 25) {
+            return "Sa veetsid rohkem aega Netflixis kui märkmetes.\n" +
+                    "Šokeeriv tulemus. Tõeliselt šokeeriv.";
+        } else if (teadmised >= 50) {
+            return "Kehv õnn. Sa proovisid päriselt, aga universum ütles ei.\n" +
+                    "Mitte sinu päev.";
+        } else {
+            return "Järgmine kord parem?";
+        }
+    }
+
+    // Näitab teadet enne eksami arvutamist.
+    private void näitaEksamiPäevaTeadet() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Eksami päev!");
+        alert.setHeaderText("EKSAMI PÄEV ON KÄES!");
+        alert.setContentText("Sinu lõplikud statistikud:\n" + õpilane.getStatsText());
+        alert.showAndWait();
     }
 
     // Uuendab õppimise järjestust
