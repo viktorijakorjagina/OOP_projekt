@@ -9,17 +9,23 @@
 "Eksami Simulaator" on interaktiivne tekstipõhine mäng, milles mängija kehastab üliõpilast, kellel on eksam tulemas. Mängu eesmärk on eksam edukalt läbida - selleks tuleb 3 mängupäeva jooksul teha õigeid valikuid ning koguda piisavalt teadmispunkte. Mängija otsused mõjutavad kahte näitajat: teadmisi ja enesekindlust. Lõplik eksamitulemus sõltub kogutud teadmistest, enesekindluse boonusest ning juhuslikust õnnetegurist. Eksami läbimiseks on vaja saavutada vähemalt 50 punkti.
 
 ### Programmi üldine töö
-Mäng kestab 3 mängupäeva. Iga päev teeb mängija 5 valikut, mida teha: õppida, vaadata loenguvideot, lahendada ülesandeid, vaadata Netflixi või puhata. Igal valikul on erinev mõju kahele näitajale: teadmistele ja enesekindlusele. Pärast 3. päeva toimub eksam, kus lisandub juhusliku õnneteguri mõju. Mängija läbib eksami, kui lõplik tulemus on 50 punkti või rohkem.
-
-Programm kasutab kasutajaliidesena JOptionPane’i aknaid - kõik küsimused, valikud ja tulemused kuvatakse hüpikakendena. Mängija sisestab oma valiku (numbri 1–5) sisestusaknasse. Kui mängija valib "õppimise" 3 korda järjest, blokeeritakse see valik ning programm nõuab teise tegevuse valimist.
+Mäng kestab 3 mängupäeva. Iga päev teeb mängija 3 valikut viie tegevuse vahel: õppimine, loengu vaatamine, ülesannete lahendamine, Netflixi vaatamine või puhkamine. Igal tegevusel on erinev mõju teadmistele ja enesekindlusele.
+Kui mängija valib õppimise 3 korda järjest, siis õppimise nupp muutub ajutiselt mitteaktiivseks ning mängija peab valima mõne teise tegevuse.
+Pärast kolmanda päeva lõppu toimub automaatselt eksam. Lõplik tulemus arvutatakse teadmiste, enesekindluse boonuse ja juhusliku õnneteguri põhjal.
+Programm kasutab JavaFX graafilist kasutajaliidest. Kasutaja saab valida tegevusi nii hiirega (nuppe vajutades) kui ka klaviatuuriga (klahvid 1-5).
+Programm salvestab mängu logi tekstifaili ning käivitamisel näidatakse kasutajale eelmise mängu viimast logirida. Pärast mängu lõppu saab kasutaja soovi korral alustada uut mängu.
 
 ### Lühike kasutusjuhis
-1. Käivitage programm IntelliJ IDEA's, vajutades rohelist nuppu Run failis Peaklass.java.
-2. Sisestage oma nimi esimeses aknas.
-3. Iga päev kuvatakse kõigepealt nõuandeaken, seejärel valikuteaken.
-4. Sisestage valikuaknasse number 1-5 ja vajutage OK.
-5. Pärast igat valikut kuvatakse tulemuseaken, kus on näha saadud punktid.
-6. Pärast 3. mängupäeva toimub eksam - tulemus kuvatakse automaatselt.
+1. Käivitage programm IntelliJ IDEA-s, vajutades Run failis EksamiSimulaatorFX.java.
+2. Sisestage algusaknas oma nimi ja vajutage nuppu "Alusta mängu".
+3. Iga päev tuleb teha 3 valikut.
+4. Tegevusi saab valida:
+  - hiirega vajutades nuppe
+  - klaviatuuriga kasutades klahve 1, 2, 3, 4 ja 5
+5. Vasakul kuvatakse mängija teadmised, enesekindlus ja juhuslik nõuanne.
+6. Paremal kuvatakse tegevuste nupud ja mängu logi.
+7. Pärast kolmandat päeva toimub automaatselt eksam ning kuvatakse lõpptulemus.
+8. Pärast mängu lõppu saab vajutada nuppu "Alusta uuesti".
 
 # Klasside kirjeldus
 ### Peaklass.java
@@ -46,6 +52,33 @@ Olulisemad meetodid: `sooritaEksam(Õpilane õpilane)` - viib läbi kogu eksami:
 Klass `NõuandeGeneraator` kuvab mängijale iga päeva alguses juhusliku nõuande. Klassil on 12 erineva sisuga nõuannet sisaldav massiiv. Iga päeva alguses valitakse klassi `Random` abil üks nõuanne juhuslikult ning kuvatakse mängijale hüpikaknas.
 Olulisemad meetodid: `NõuandeGeneraator()` - konstruktor; `getNõuanne()` - tagastab juhusliku nõuande massiivist, kasutades meetodit `random.nextInt(nõuanded.length)`.
 
+### EksamiSimulaatorFX.java
+See on programmi uus peaklass teises etapis. Klass käivitab JavaFX rakenduse ning avab algusakna. Olulisem meetod on `start()`, mis loob `MänguKontrollija` objekti ja käivitab programmi.
+
+### MänguKontrollija.java
+See klass juhib kogu mängu loogikat ning ühendab kõik teised klassid omavahel. Klass kontrollib päevade arvu, töötleb mängija valikuid, uuendab statistikat ja käivitab eksami. Samuti võimaldab see pärast mängu lõppu uut mängu alustada.
+
+### MänguVaade.java
+See klass loob peamise mänguakna JavaFX abil. Siin kuvatakse nupud, progressiribad, mängu logi ning mängija statistika. Klass töötleb ka klaviatuuriga tehtud tegevusvalikuid.
+
+### AlgusVaade.java
+See klass loob programmi algusakna. Kasutaja sisestab siin oma nime ning saab näha eelmise mängu viimast logirida.
+
+### FailiHaldur.java
+See klass tegeleb failidega. Klass kirjutab mängu logi tekstifaili ning loeb sealt andmeid programmi käivitamisel.
+
+### EksamiArvutaja.java
+See klass arvutab lõpliku eksamitulemuse teadmiste, enesekindluse ja õnneteguri põhjal.
+
+### EksamiTulemus.java
+See klass hoiab eksami lõpptulemuse andmeid ning tagastab sobiva lõpusõnumi.
+
+### Kujundus.java
+See klass sisaldab JavaFX kujunduse meetodeid. Siin määratakse nuppude, tausta ja teiste visuaalsete elementide stiil.
+
+### TegevusteLooja.java
+See klass loob kõik mängus kasutatavad tegevused ning tagastab need massiivina.
+
 # Projekti tegemise protsess
 ### 1. etapp - ideede genereerimine ja planeerimine
 Esimeses kohtumises arutati võimalikke projektiteemasid. Otsustati luua humoorika suhtumisega üliõpilassimulatsioon, kuna see võimaldas kasutada kõiki nõutavaid programmeerimismõisteid ning tundus mõlemale rühmaliikmetele huvitav ja motiveeriv. Pandi paika programmi üldine kontseptsioon: 3 mängupäeva, 2 näitajat (teadmised ja enesekindlus) ning lõplik eksam juhusliku õnneteguriga. Koostati programmi struktuur ning otsustati klasside arv ja nende vastutusalad. Mõlemad rühmaliikmed osalesid selles etapis võrdselt.
@@ -64,12 +97,15 @@ Rühmatöö kirjeldus koostati ühiselt, arutades läbi iga punkti sisu. Mõlema
 
 # Rühmaliikmete panus ja ajakulu
 ### Viktorija Korjagina:
-`Tegevus.java`, `NõuandeGeneraator.java`, `Päev.java`; GitHub-i repositooriumi seadistamine; osalemine rühmatöö kirjelduse koostamisel.
-Ajakulu: orienteeruvalt 8 tundi.
+Tegeles peamiselt mängu loogikaga seotud klassidega: `Tegevus.java`, `TegevusteLooja.java`, `NõuandeGeneraator.java`, `Õpilane.java` ning osales `MänguKontrollija.java` loogika arendamises. Aitas parandada mängu tasakaalu, testida erinevaid tegevusi ning osales dokumentatsiooni koostamisel.
+Ajakulu: orienteeruvalt 14 tundi.
 
 ### Maria Elisa Vassiljeva:
-`Õpilane.java`, `Eksam.java`, `Peaklass.java`; programmi testimine; osalemine rühmatöö kirjelduse koostamisel.
-Ajakulu: orienteeruvalt 8 tundi.
+Tegeles peamiselt kasutajaliidese ja failidega seotud klassidega: `EksamiSimulaatorFX.java`, `AlgusVaade.java`, `MänguVaade.java`, `FailiHaldur.java`, `Kujundus.java`, `EksamiArvutaja.java`, `EksamiTulemus.java` ning osales programmi testimisel ja dokumentatsiooni koostamisel.
+Ajakulu: orienteeruvalt 14 tundi.
+
+# Tehisintellekti kasutamise kirjeldus
+Kasutasime ChatGPT-d abivahendina peamiselt vigade otsimiseks, koodi kontrollimiseks ja mõnede ideede parandamiseks. Näiteks aitas see selgitada JavaFX kasutamist, failidega töötamist ning mõningaid loogikavigu. Kogu programmi põhiloogika kirjutasime ja mõistsime ise.
 
 # Tegemise mured
 1. Git ja GitHub. Alguses valmistas raskusi harude (branch) loogika mõistmine ning muudatuste omavaheline sünkroonimine. Eriti keeruline oli olukord, kus mõlemad rühmaliikmed muutsid sama faili samaaegselt, mis nõudis konfliktide lahendamist.
@@ -80,19 +116,27 @@ Ajakulu: orienteeruvalt 8 tundi.
 
 # Hinnang lõpptulemusele
 ### Millega saime hästi hakkama
-Programm töötab korrektselt ning täidab kõik ülesandes nõutud tingimused: mitu klassi koos konstruktorite, getterite ja setteritega, klassi `Random` kasutamine, `JOptionPane`-põhine kasutajaliides, mõistlikud kommentaarid ning kasutajasõbralik dialoog.
-Mängu loogika on selge ning mängijale arusaadav - igal hetkel on näha, mis toimub ja millised on valiku tagajärjed. Õppimise blokeerimise mehhanism töötab täpselt nii nagu kavandatud. GitHub-i koostöövoog toimis projekti lõpuks hästi - mõlemad rühmaliikmed said muudatusi teha ning need edukalt ühendada.
+Programm töötab korrektselt ning täidab kõik rühmatöö nõuded. Kasutasime mitut klassi, JavaFX graafilist kasutajaliidest, hiire ja klaviatuuri sündmusi, failide lugemist ja kirjutamist ning erinditöötlust.
+Saime hästi hakkama programmi loogilise ülesehitusega, sest jagasime suure programmi väiksemateks klassideks, millel on erinevad ülesanded. Näiteks eraldasime kasutajaliidese, mänguloogika ja failidega töötamise erinevatesse klassidesse.
+Samuti oleme rahul programmi visuaalse poolega. Võrreldes esimese etapiga on kasutajaliides palju mugavam ja selgem. Mängija näeb oma statistikat, tegevusnuppe ja mängu logi ühes aknas.
+Lisaks töötab õppimise blokeerimise süsteem, eksami arvutamine ning võimalus pärast mängu lõppu uuesti alustada.
 
 ### Mis vajab arendamist
-Programmi visuaalne pool on minimaalne - `JOptionPane` aknad on lihtsad ega ole eriti atraktiivsed. Edasiarendusena võiks kasutada graafilist kasutajaliidest, näiteks `JavaFX`-i. Samuti puudub programmil võimalus tulemusi salvestada - iga mänguseanssi alustatakse nullist.
+Programmi võiks tulevikus veel visuaalselt edasi arendada, näiteks lisada rohkem animatsioone, pilte või erinevaid mängustsenaariumeid. Samuti võiks tulevikus lisada rohkem juhuslikke sündmusi ja rohkem tegevusvalikuid.
 
 # Testimine
 ### Üksikute klasside testimine
-Klasse testiti eraldi, lisades ajutiselt `Peaklass.java`-sse väikeseid testikoode.
-1. `Tegevus`: loodi `Tegevus` objekt ning kutsuti meetodit `getTeadmistekasv()` 20 korda järjest, kontrollides, et tulemused jäävad alati lubatud vahemikku (näiteks 10–20 õppimise puhul). Kontrolliti ka, et meetod `getEnesekindlusMuutus()` tagastab alati korrektse fikseeritud väärtuse.
-2. `Õpilane`: loodi `Õpilane` objekt ning kutsuti meetodeid `lisaTeadmised()` ja `lisaEnesekindlus()` nii positiivsete kui negatiivsete väärtustega. Kontrolliti, et kumbki näitaja ei lange alla nulli.
-3. `NõuandeGeneraator`: kutsuti meetodit `getNõuanne()` korduvalt ning kontrolliti, et tagastatakse alati sisukas tekst ning erinevatel kordadel ilmuvad erinevad nõuanded.
-4. `Eksam`: testiti kolme erinevat stsenaariumi - kõrged teadmised, madalad teadmised ning keskmised teadmised erineva õnnefaktoriga. Kontrolliti, et lõplik skoor arvutatakse vastavalt kehtestatud valemile korrektselt.
+Üksikuid klasse testiti eraldi, kasutades ajutisi testandmeid ning programmi erinevaid osi eraldi käivitades.
+1. `Tegevus`
+Loodi `Tegevus` objekt ning kutsuti meetodit `getTeadmistekasv()` mitu korda järjest, et kontrollida, kas teadmiste väärtused jäävad alati etteantud vahemikku. Samuti kontrolliti, et enesekindluse muutused oleksid õiged.
+2. `Õpilane`:
+Loodi `Õpilane` objekt ning testiti meetodeid `lisaTeadmised()` ja `lisaEnesekindlus()` nii positiivsete kui ka negatiivsete väärtustega. Kontrolliti, et väärtused ei läheks alla nulli.
+3. `NõuandeGeneraator`:
+Kutsuti meetodit `getNõuanne()` korduvalt ning kontrolliti, et tagastatakse erinevaid nõuandeid.
+4. `EksamiArvutaja`:
+Testiti erinevaid olukordi (palju teadmisi, vähe teadmisi, erinev enesekindlus ja õnnetegur), et kontrollida lõpliku punktisumma korrektset arvutamist.
+5. `FailiHaldur`:
+Kontrolliti, kas mängu logi kirjutatakse õigesti faili ning kas programmi käivitamisel loetakse failist viimane logirida korrektselt.
 
 ### Kogu programmi testimine
 Programmi testiti tervikuna, mängides läbi mitu täismängu erinevate strateegiatega.
