@@ -193,6 +193,19 @@ public class MänguKontrollija {
         );
     }
 
+    // Viib kasutaja tagasi algusaknasse
+    // Seda kasutatakse siis, kui mäng on lõppenud ja mängija tahab uuesti alustada
+    public void alustaUuesti() {
+        mängLõppenud = false;
+        õpilane = null;
+        mänguVaade = null;
+
+        päevaNr = 1;
+        valikNr = 1;
+
+        naitaAlgusAkent();
+    }
+
     // Näitab hoiatusakent
     private void näitaHoiatus(String pealkiri, String tekst) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
