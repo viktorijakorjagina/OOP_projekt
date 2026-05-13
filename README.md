@@ -127,7 +127,7 @@ Programmi võiks tulevikus veel visuaalselt edasi arendada, näiteks lisada rohk
 # Testimine
 ### Üksikute klasside testimine
 Üksikuid klasse testiti eraldi, kasutades ajutisi testandmeid ning programmi erinevaid osi eraldi käivitades.
-1. `Tegevus`
+1. `Tegevus`:
 Loodi `Tegevus` objekt ning kutsuti meetodit `getTeadmistekasv()` mitu korda järjest, et kontrollida, kas teadmiste väärtused jäävad alati etteantud vahemikku. Samuti kontrolliti, et enesekindluse muutused oleksid õiged.
 2. `Õpilane`:
 Loodi `Õpilane` objekt ning testiti meetodeid `lisaTeadmised()` ja `lisaEnesekindlus()` nii positiivsete kui ka negatiivsete väärtustega. Kontrolliti, et väärtused ei läheks alla nulli.
