@@ -4,8 +4,8 @@ import javafx.stage.Stage;
 
 import java.util.Random;
 
-// See klass juhib kogu mängu loogikat.
-// Ta ühendab kõik teised klassid omavahel.
+// See klass juhib kogu mängu loogikat
+// See ühendab kõik teised klassid omavahel
 public class MänguKontrollija {
 
     private Stage lava;
@@ -14,8 +14,13 @@ public class MänguKontrollija {
     private NõuandeGeneraator nõuandeGeneraator = new NõuandeGeneraator();
     private Random random = new Random();
     private Tegevus[] tegevused;
+
     private int päevaNr = 1;
     private int valikNr = 1;
+
+    // See näitab, kas mäng on juba lõppenud
+    // Seda on vaja, et pärast eksamit ei saaks klaviatuuriga mängu edasi jätkata
+    private boolean mängLõppenud = false;
 
     public MänguKontrollija(Stage lava) {
         this.lava = lava;
@@ -38,8 +43,15 @@ public class MänguKontrollija {
                 throw new IllegalArgumentException("Nimi ei tohi olla tühi.");
             }
             õpilane = new Õpilane(nimi.trim());
+
+            // Uue mängu alguses paneme loendurid uuesti algusesse
+            päevaNr = 1;
+            valikNr = 1;
+            mängLõppenud = false;
+
             FailiHaldur.alustaUutMangu(õpilane.getNimi());
             avaMänguAken();
+
         } catch (IllegalArgumentException e) {
             näitaHoiatus("Vale sisend", e.getMessage());
         }
@@ -58,6 +70,19 @@ public class MänguKontrollija {
     // Töötleb mängija valikut
     public void teeValik(int valik) {
         try {
+            // Kui mäng on juba lõppenud, siis uusi valikuid enam ei töötle
+            if (mängLõppenud) {
+                return;
+            }
+
+            if (õpilane == null) {
+                throw new IllegalStateException("Mängijat ei ole loodud.");
+            }
+
+            if (valik < 1 || valik > 5) {
+                throw new IllegalArgumentException("Valik peab olema 1 kuni 5.");
+            }
+
             // Kui mängija õppis liiga palju järjest
             if (valik == 1 && õpilane.getÕppimisJärjestus() >= 3) {
                 throw new IllegalArgumentException("Oled juba 3 korda järjest õppinud. Puhka natuke!");
@@ -70,11 +95,11 @@ public class MänguKontrollija {
 
             if (valik == 4) {
                 int episoodid = 1 + random.nextInt(3);
+
                 if (episoodid > 1) {
                     enesekindlus -= (episoodid - 1) * 3;
                     lisaTekst = "Vaatasid " + episoodid + " episoodi. Ups.";
-                }
-                else {
+                } else {
                     lisaTekst = "Vaatasid ainult 1 episoodi. Muljetavaldav enesekontroll.";
                 }
             }
@@ -89,35 +114,54 @@ public class MänguKontrollija {
                     " | teadmised " + teadmised +
                     ", enesekindlus " + enesekindlus +
                     ". " + lisaTekst;
+
             mänguVaade.lisaLogiTekst(logiRida);
+            FailiHaldur.kirjutaLogisse(logiRida);
 
             liiguEdasi();
-            uuendaEkraani();
-        } catch (IllegalArgumentException e) {
+
+            // Ekraani uuendame ainult siis, kui mäng ei lõppenud eksamiga
+            if (!mängLõppenud) {
+                uuendaEkraani();
+            }
+
+        } catch (IllegalArgumentException | IllegalStateException e) {
             näitaHoiatus("Vale tegevus", e.getMessage());
         }
     }
 
-    // Liigugub järgmise päeva või eksamini
+    // Liigub järgmise päeva või eksamini
     private void liiguEdasi() {
         valikNr++;
+
         if (valikNr > 3) {
-            mänguVaade.lisaLogiTekst("Päev " + päevaNr + " lõppes.");
-            FailiHaldur.kirjutaLogisse("Päev " + päevaNr + " lõppes.");
+            String paevaLopuRida = "Päev " + päevaNr + " lõppes.";
+
+            mänguVaade.lisaLogiTekst(paevaLopuRida);
+            FailiHaldur.kirjutaLogisse(paevaLopuRida);
+
+            // Kui lõppes kolmas päev, siis läheme kohe eksamile
+            if (päevaNr == 3) {
+                sooritaEksam();
+                return;
+            }
+
             päevaNr++;
             valikNr = 1;
-        }
-        if (päevaNr > 3) {
-            sooritaEksam();
         }
     }
 
     // Arvutab eksami tulemuse
     private void sooritaEksam() {
+        // Märgime mängu lõppenuks
+        // Pärast seda teeValik() enam uusi valikuid ei töötle
+        mängLõppenud = true;
+
         EksamiArvutaja arvutaja = new EksamiArvutaja();
         EksamiTulemus tulemus = arvutaja.arvutaTulemus(õpilane);
 
         mänguVaade.lisaLogiTekst("\n" + tulemus.getTäisTekst());
+
         FailiHaldur.kirjutaLogisse("LÕPPTULEMUS: " + õpilane.getNimi() + " - " + tulemus.getLõplikSkoor() + " punkti.");
         FailiHaldur.kirjutaLogisse(tulemus.getTulemusTekst());
 
@@ -134,8 +178,7 @@ public class MänguKontrollija {
     private void uuendaÕppimiseJärjestust(int valik) {
         if (valik == 1) {
             õpilane.setÕppimisJärjestus(õpilane.getÕppimisJärjestus() + 1);
-        }
-        else {
+        } else {
             õpilane.setÕppimisJärjestus(0);
         }
     }
