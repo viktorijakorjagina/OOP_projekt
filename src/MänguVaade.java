@@ -43,6 +43,8 @@ public class MänguVaade {
         Kujundus.tavalineTekst(statsLabel);
         Kujundus.tavalineTekst(nõuanneLabel);
 
+        teadmisedRiba = new ProgressBar(0);
+        enesekindlusRiba = new ProgressBar(0);
         teadmisedRiba.setMaxWidth(Double.MAX_VALUE);
         enesekindlusRiba.setMaxWidth(Double.MAX_VALUE);
 
