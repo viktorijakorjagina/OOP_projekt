@@ -4,6 +4,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
@@ -67,7 +68,7 @@ public class MänguVaade {
         Kujundus.taustaStiil(juur);
 
         Scene stseen = new Scene(juur, 950, 620);
-        // TODO klaviatuurijuhtimine
+        lisaKlaviatuuriJuhtimine(stseen);
         return stseen;
     }
 
@@ -109,7 +110,11 @@ public class MänguVaade {
         netflixNupp = looValikuNupp("4 - Ainult üks episood");
         puhkusNupp = looValikuNupp("5 - Puhkamine");
 
-        // TODO lisa sündmused
+        õppimineNupp.setOnAction(e -> kontrollija.teeValik(1));
+        loengNupp.setOnAction(e -> kontrollija.teeValik(2));
+        ülesandedNupp.setOnAction(e -> kontrollija.teeValik(3));
+        netflixNupp.setOnAction(e -> kontrollija.teeValik(4));
+        puhkusNupp.setOnAction(e -> kontrollija.teeValik(5));
     }
 
     // Loob ühe nupu
@@ -121,7 +126,16 @@ public class MänguVaade {
         return nupp;
     }
 
-    // TODO lisa klaviatuuriga sündmused
+    // Lisab klaviatuuriga juhtimise
+    public void lisaKlaviatuuriJuhtimine(Scene stseen) {
+        stseen.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.DIGIT1) kontrollija.teeValik(1);
+            if (e.getCode() == KeyCode.DIGIT2) kontrollija.teeValik(2);
+            if (e.getCode() == KeyCode.DIGIT3) kontrollija.teeValik(3);
+            if (e.getCode() == KeyCode.DIGIT4) kontrollija.teeValik(4);
+            if (e.getCode() == KeyCode.DIGIT5) kontrollija.teeValik(5);
+        });
+    }
 
     // Uuendab ekraanil olevaid andmeid
     public void uuendaAndmeid(Õpilane õpilane, int päevaNr, int valikNr, String nõuanne) {

@@ -51,8 +51,8 @@ public class AlgusVaade {
         juur.setPadding(new Insets(30));
         Kujundus.taustaStiil(juur);
 
-        // TODO Mängu alustamine nupuga
-        // TODO Enter klahviga (sündmused)
+        alustaNupp.setOnAction(e -> kontrollija.alustaMängu(nimiVäli.getText())); // mängu alustamine nupuga
+        nimiVäli.setOnAction(e -> kontrollija.alustaMängu(nimiVäli.getText())); // Enter-klahviga
 
         return new Scene(juur, 850, 600);
     }
