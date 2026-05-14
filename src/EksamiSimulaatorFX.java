@@ -7,7 +7,7 @@ public class EksamiSimulaatorFX extends Application {
     @Override
     public void start(Stage lava) throws Exception {
         MänguKontrollija kontrollija = new MänguKontrollija(lava);
-        kontrollija.naitaAlgusAkent();
+        kontrollija.näitaAlgusAkent();
     }
 
     public static void main(String[] args) {

@@ -385,3 +385,35 @@ LÕPPTULEMUS: hhhh - 15 punkti.
 SA KUKKUSID EKSAMI LÄBI...
 
 UUS MÄNG: asdaw
+
+UUS MÄNG: fsf
+Päev 1, valik 1: Ülesannete lahendamine | teadmised 6, enesekindlus 5. 
+Päev 1, valik 2: Loengu vaatamine | teadmised 5, enesekindlus 10. 
+Päev 1, valik 3: Ülesannete lahendamine | teadmised 16, enesekindlus 5. 
+Päev 1 lõppes.
+Päev 2, valik 1: Loengu vaatamine | teadmised 4, enesekindlus 10. 
+Päev 2, valik 2: Loengu vaatamine | teadmised 7, enesekindlus 10. 
+Päev 2, valik 3: Ülesannete lahendamine | teadmised 8, enesekindlus 5. 
+Päev 2 lõppes.
+Päev 3, valik 1: Ülesannete lahendamine | teadmised 16, enesekindlus 5. 
+Päev 3, valik 2: Loengu vaatamine | teadmised 7, enesekindlus 10. 
+Päev 3, valik 3: Ülesannete lahendamine | teadmised 11, enesekindlus 5. 
+Päev 3 lõppes.
+LÕPPTULEMUS: fsf - 111 punkti.
+SA LÄBISID EKSAMI!
+
+UUS MÄNG: hhhhh
+Päev 1, valik 1: Ülesannete lahendamine | teadmised 14, enesekindlus 5. 
+Päev 1, valik 2: Ülesannete lahendamine | teadmised 17, enesekindlus 5. 
+Päev 1, valik 3: Ülesannete lahendamine | teadmised 12, enesekindlus 5. 
+Päev 1 lõppes.
+Päev 2, valik 1: Ülesannete lahendamine | teadmised 17, enesekindlus 5. 
+Päev 2, valik 2: Ülesannete lahendamine | teadmised 14, enesekindlus 5. 
+Päev 2, valik 3: Ülesannete lahendamine | teadmised 13, enesekindlus 5. 
+Päev 2 lõppes.
+Päev 3, valik 1: Ülesannete lahendamine | teadmised 3, enesekindlus 5. 
+Päev 3, valik 2: Ülesannete lahendamine | teadmised 0, enesekindlus 5. 
+Päev 3, valik 3: Ülesannete lahendamine | teadmised 13, enesekindlus 5. 
+Päev 3 lõppes.
+LÕPPTULEMUS: hhhhh - 119 punkti.
+SA LÄBISID EKSAMI!
