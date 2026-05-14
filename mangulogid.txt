@@ -346,3 +346,40 @@ Päev 3, valik 3: Puhkamine | teadmised 0, enesekindlus -5.
 Päev 3 lõppes.
 LÕPPTULEMUS: 5t - 39 punkti.
 SA KUKKUSID EKSAMI LÄBI...
+
+UUS MÄNG: sfs
+
+UUS MÄNG: drd6u
+Päev 1, valik 1: Õppimine | teadmised 10, enesekindlus 5. 
+Päev 1, valik 2: Loengu vaatamine | teadmised 7, enesekindlus 10. 
+Päev 1, valik 3: Ülesannete lahendamine | teadmised 19, enesekindlus 5. 
+Päev 1 lõppes.
+Päev 2, valik 1: Ainult üks episood | teadmised 0, enesekindlus -8. Vaatasid 2 episoodi. Ups.
+Päev 2, valik 2: Ainult üks episood | teadmised 0, enesekindlus -11. Vaatasid 3 episoodi. Ups.
+Päev 2, valik 3: Ainult üks episood | teadmised 0, enesekindlus -11. Vaatasid 3 episoodi. Ups.
+Päev 2 lõppes.
+Päev 3, valik 1: Ainult üks episood | teadmised 0, enesekindlus -8. Vaatasid 2 episoodi. Ups.
+Päev 3, valik 2: Ainult üks episood | teadmised 0, enesekindlus -5. Vaatasid ainult 1 episoodi. Muljetavaldav enesekontroll.
+Päev 3, valik 3: Ainult üks episood | teadmised 0, enesekindlus -11. Vaatasid 3 episoodi. Ups.
+Päev 3 lõppes.
+LÕPPTULEMUS: drd6u - 41 punkti.
+SA KUKKUSID EKSAMI LÄBI...
+
+UUS MÄNG: uuu
+Päev 1, valik 1: Õppimine | teadmised 15, enesekindlus 5. 
+
+UUS MÄNG: hhhh
+Päev 1, valik 1: Ainult üks episood | teadmised 0, enesekindlus -5. Vaatasid ainult 1 episoodi. Muljetavaldav enesekontroll.
+Päev 1, valik 2: Ainult üks episood | teadmised 0, enesekindlus -8. Vaatasid 2 episoodi. Ups.
+Päev 1, valik 3: Ainult üks episood | teadmised 0, enesekindlus -11. Vaatasid 3 episoodi. Ups.
+Päev 1 lõppes.
+Päev 2, valik 1: Ainult üks episood | teadmised 0, enesekindlus -11. Vaatasid 3 episoodi. Ups.
+Päev 2, valik 2: Ainult üks episood | teadmised 0, enesekindlus -8. Vaatasid 2 episoodi. Ups.
+Päev 2, valik 3: Ainult üks episood | teadmised 0, enesekindlus -8. Vaatasid 2 episoodi. Ups.
+Päev 2 lõppes.
+Päev 3, valik 1: Ainult üks episood | teadmised 0, enesekindlus -11. Vaatasid 3 episoodi. Ups.
+Päev 3, valik 2: Ainult üks episood | teadmised 0, enesekindlus -8. Vaatasid 2 episoodi. Ups.
+Päev 3, valik 3: Ainult üks episood | teadmised 0, enesekindlus -5. Vaatasid ainult 1 episoodi. Muljetavaldav enesekontroll.
+Päev 3 lõppes.
+LÕPPTULEMUS: hhhh - 15 punkti.
+SA KUKKUSID EKSAMI LÄBI...
