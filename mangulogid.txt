@@ -163,3 +163,186 @@ Päev 1, valik 2: Ainult üks episood | teadmised 0, enesekindlus -11. Vaatasid 
 UUS MÄNG: guykgyu
 Päev 1, valik 1: Õppimine | teadmised 17, enesekindlus 5. 
 Päev 1, valik 2: Ainult üks episood | teadmised 0, enesekindlus -5. Vaatasid ainult 1 episoodi. Muljetavaldav enesekontroll.
+
+UUS MÄNG: ggggg
+
+UUS MÄNG: j
+Päev 1, valik 1: Ainult üks episood | teadmised 0, enesekindlus -5. Vaatasid ainult 1 episoodi. Muljetavaldav enesekontroll.
+Päev 1, valik 2: Loengu vaatamine | teadmised 8, enesekindlus 10. 
+Päev 1, valik 3: Õppimine | teadmised 15, enesekindlus 5. 
+Päev 1 lõppes.
+Päev 2, valik 1: Ülesannete lahendamine | teadmised 19, enesekindlus 5. 
+Päev 2, valik 2: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 2, valik 3: Ainult üks episood | teadmised 0, enesekindlus -5. Vaatasid ainult 1 episoodi. Muljetavaldav enesekontroll.
+Päev 2 lõppes.
+Päev 3, valik 1: Õppimine | teadmised 18, enesekindlus 5. 
+Päev 3, valik 2: Ainult üks episood | teadmised 0, enesekindlus -8. Vaatasid 2 episoodi. Ups.
+Päev 3, valik 3: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 3 lõppes.
+
+UUS MÄNG: aaaa
+Päev 1, valik 1: Loengu vaatamine | teadmised 8, enesekindlus 10. 
+Päev 1, valik 2: Ülesannete lahendamine | teadmised 15, enesekindlus 5. 
+Päev 1, valik 3: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 1 lõppes.
+Päev 2, valik 1: Ainult üks episood | teadmised 0, enesekindlus -5. Vaatasid ainult 1 episoodi. Muljetavaldav enesekontroll.
+Päev 2, valik 2: Ainult üks episood | teadmised 0, enesekindlus -8. Vaatasid 2 episoodi. Ups.
+Päev 2, valik 3: Ülesannete lahendamine | teadmised 10, enesekindlus 5. 
+Päev 2 lõppes.
+Päev 3, valik 1: Õppimine | teadmised 12, enesekindlus 5. 
+Päev 3, valik 2: Loengu vaatamine | teadmised 6, enesekindlus 10. 
+Päev 3, valik 3: Õppimine | teadmised 11, enesekindlus 5. 
+Päev 3 lõppes.
+LÕPPTULEMUS: aaaa - 79 punkti.
+SA LÄBISID EKSAMI!
+
+UUS MÄNG: Masha
+Päev 1, valik 1: Õppimine | teadmised 17, enesekindlus 5. 
+Päev 1, valik 2: Ülesannete lahendamine | teadmised 5, enesekindlus 5. 
+Päev 1, valik 3: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 1 lõppes.
+Päev 2, valik 1: Õppimine | teadmised 0, enesekindlus 5. 
+Päev 2, valik 2: Õppimine | teadmised 13, enesekindlus 5. 
+Päev 2, valik 3: Õppimine | teadmised 1, enesekindlus 5. 
+Päev 2 lõppes.
+Päev 3, valik 1: Loengu vaatamine | teadmised 4, enesekindlus 10. 
+Päev 3, valik 2: Ülesannete lahendamine | teadmised 2, enesekindlus 5. 
+Päev 3, valik 3: Õppimine | teadmised 16, enesekindlus 5. 
+Päev 3 lõppes.
+LÕPPTULEMUS: Masha - 67 punkti.
+SA LÄBISID EKSAMI!
+
+UUS MÄNG: Masha
+Päev 1, valik 1: Õppimine | teadmised 16, enesekindlus 5. 
+Päev 1, valik 2: Loengu vaatamine | teadmised 1, enesekindlus 10. 
+Päev 1, valik 3: Ülesannete lahendamine | teadmised 20, enesekindlus 5. 
+Päev 1 lõppes.
+Päev 2, valik 1: Ainult üks episood | teadmised 0, enesekindlus -8. Vaatasid 2 episoodi. Ups.
+Päev 2, valik 2: Ainult üks episood | teadmised 0, enesekindlus -11. Vaatasid 3 episoodi. Ups.
+Päev 2, valik 3: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 2 lõppes.
+Päev 3, valik 1: Loengu vaatamine | teadmised 5, enesekindlus 10. 
+Päev 3, valik 2: Loengu vaatamine | teadmised 2, enesekindlus 10. 
+Päev 3, valik 3: Õppimine | teadmised 18, enesekindlus 5. 
+Päev 3 lõppes.
+LÕPPTULEMUS: Masha - 73 punkti.
+SA LÄBISID EKSAMI!
+
+UUS MÄNG: k
+Päev 1, valik 1: Õppimine | teadmised 9, enesekindlus 5. 
+Päev 1, valik 2: Ülesannete lahendamine | teadmised 11, enesekindlus 5. 
+Päev 1, valik 3: Õppimine | teadmised 9, enesekindlus 5. 
+Päev 1 lõppes.
+Päev 2, valik 1: Õppimine | teadmised 14, enesekindlus 5. 
+Päev 2, valik 2: Õppimine | teadmised 9, enesekindlus 5. 
+Päev 2, valik 3: Ülesannete lahendamine | teadmised 14, enesekindlus 5. 
+Päev 2 lõppes.
+Päev 3, valik 1: Ülesannete lahendamine | teadmised 12, enesekindlus 5. 
+Päev 3, valik 2: Ülesannete lahendamine | teadmised 14, enesekindlus 5. 
+Päev 3, valik 3: Ülesannete lahendamine | teadmised 6, enesekindlus 5. 
+Päev 3 lõppes.
+LÕPPTULEMUS: k - 117 punkti.
+SA LÄBISID EKSAMI!
+
+UUS MÄNG: masha
+Päev 1, valik 1: Õppimine | teadmised 17, enesekindlus 5. 
+Päev 1, valik 2: Loengu vaatamine | teadmised 2, enesekindlus 10. 
+Päev 1, valik 3: Ülesannete lahendamine | teadmised 19, enesekindlus 5. 
+Päev 1 lõppes.
+Päev 2, valik 1: Ülesannete lahendamine | teadmised 20, enesekindlus 5. 
+Päev 2, valik 2: Ülesannete lahendamine | teadmised 14, enesekindlus 5. 
+Päev 2, valik 3: Ülesannete lahendamine | teadmised 16, enesekindlus 5. 
+Päev 2 lõppes.
+Päev 3, valik 1: Loengu vaatamine | teadmised 2, enesekindlus 10. 
+Päev 3, valik 2: Õppimine | teadmised 19, enesekindlus 5. 
+Päev 3, valik 3: Õppimine | teadmised 9, enesekindlus 5. 
+Päev 3 lõppes.
+LÕPPTULEMUS: masha - 149 punkti.
+SA LÄBISID EKSAMI!
+
+UUS MÄNG: cacs
+Päev 1, valik 1: Õppimine | teadmised 3, enesekindlus 5. 
+Päev 1, valik 2: Õppimine | teadmised 15, enesekindlus 5. 
+Päev 1, valik 3: Õppimine | teadmised 13, enesekindlus 5. 
+Päev 1 lõppes.
+Päev 2, valik 1: Ülesannete lahendamine | teadmised 3, enesekindlus 5. 
+
+UUS MÄNG: j
+Päev 1, valik 1: Ülesannete lahendamine | teadmised 1, enesekindlus 5. 
+Päev 1, valik 2: Ülesannete lahendamine | teadmised 12, enesekindlus 5. 
+Päev 1, valik 3: Ülesannete lahendamine | teadmised 1, enesekindlus 5. 
+Päev 1 lõppes.
+Päev 2, valik 1: Ülesannete lahendamine | teadmised 1, enesekindlus 5. 
+Päev 2, valik 2: Ülesannete lahendamine | teadmised 4, enesekindlus 5. 
+Päev 2, valik 3: Ülesannete lahendamine | teadmised 17, enesekindlus 5. 
+Päev 2 lõppes.
+Päev 3, valik 1: Ülesannete lahendamine | teadmised 12, enesekindlus 5. 
+Päev 3, valik 2: Ülesannete lahendamine | teadmised 8, enesekindlus 5. 
+Päev 3, valik 3: Ülesannete lahendamine | teadmised 4, enesekindlus 5. 
+Päev 3 lõppes.
+LÕPPTULEMUS: j - 74 punkti.
+SA LÄBISID EKSAMI!
+
+UUS MÄNG: jjj
+Päev 1, valik 1: Õppimine | teadmised 18, enesekindlus 5. 
+Päev 1, valik 2: Ainult üks episood | teadmised 0, enesekindlus -5. Vaatasid ainult 1 episoodi. Muljetavaldav enesekontroll.
+Päev 1, valik 3: Ainult üks episood | teadmised 0, enesekindlus -5. Vaatasid ainult 1 episoodi. Muljetavaldav enesekontroll.
+Päev 1 lõppes.
+Päev 2, valik 1: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 2, valik 2: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 2, valik 3: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 2 lõppes.
+Päev 3, valik 1: Loengu vaatamine | teadmised 1, enesekindlus 10. 
+Päev 3, valik 2: Ülesannete lahendamine | teadmised 16, enesekindlus 5. 
+Päev 3, valik 3: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 3 lõppes.
+LÕPPTULEMUS: jjj - 51 punkti.
+SA LÄBISID EKSAMI!
+
+UUS MÄNG: ilh
+Päev 1, valik 1: Loengu vaatamine | teadmised 7, enesekindlus 10. 
+Päev 1, valik 2: Õppimine | teadmised 15, enesekindlus 5. 
+Päev 1, valik 3: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 1 lõppes.
+Päev 2, valik 1: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 2, valik 2: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 2, valik 3: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 2 lõppes.
+Päev 3, valik 1: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 3, valik 2: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 3, valik 3: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 3 lõppes.
+LÕPPTULEMUS: ilh - 37 punkti.
+SA KUKKUSID EKSAMI LÄBI...
+
+UUS MÄNG: grg
+Päev 1, valik 1: Loengu vaatamine | teadmised 4, enesekindlus 10. 
+Päev 1, valik 2: Loengu vaatamine | teadmised 1, enesekindlus 10. 
+Päev 1, valik 3: Loengu vaatamine | teadmised 0, enesekindlus 10. 
+Päev 1 lõppes.
+Päev 2, valik 1: Loengu vaatamine | teadmised 7, enesekindlus 10. 
+Päev 2, valik 2: Ülesannete lahendamine | teadmised 10, enesekindlus 5. 
+Päev 2, valik 3: Ülesannete lahendamine | teadmised 3, enesekindlus 5. 
+Päev 2 lõppes.
+Päev 3, valik 1: Ülesannete lahendamine | teadmised 3, enesekindlus 5. 
+Päev 3, valik 2: Ülesannete lahendamine | teadmised 4, enesekindlus 5. 
+Päev 3, valik 3: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 3 lõppes.
+LÕPPTULEMUS: grg - 31 punkti.
+SA KUKKUSID EKSAMI LÄBI...
+
+UUS MÄNG: 5t
+Päev 1, valik 1: Ülesannete lahendamine | teadmised 1, enesekindlus 5. 
+Päev 1, valik 2: Õppimine | teadmised 8, enesekindlus 5. 
+Päev 1, valik 3: Õppimine | teadmised 13, enesekindlus 5. 
+Päev 1 lõppes.
+Päev 2, valik 1: Õppimine | teadmised 16, enesekindlus 5. 
+Päev 2, valik 2: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 2, valik 3: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 2 lõppes.
+Päev 3, valik 1: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 3, valik 2: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 3, valik 3: Puhkamine | teadmised 0, enesekindlus -5. 
+Päev 3 lõppes.
+LÕPPTULEMUS: 5t - 39 punkti.
+SA KUKKUSID EKSAMI LÄBI...

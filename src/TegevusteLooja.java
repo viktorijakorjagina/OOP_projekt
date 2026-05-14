@@ -10,7 +10,7 @@ public class TegevusteLooja {
                 new Tegevus(
                         "Õppimine",
                         "Avad märkmikud ja õpid päriselt.",
-                        10,
+                        3,
                         20,
                         5
                 ),
@@ -24,7 +24,7 @@ public class TegevusteLooja {
                 new Tegevus(
                         "Ülesannete lahendamine",
                         "Lahendad ülesandeid ja saad targemaks.",
-                        10,
+                        0,
                         20,
                         5
                 ),

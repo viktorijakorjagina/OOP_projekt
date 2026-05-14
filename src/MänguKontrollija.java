@@ -261,7 +261,7 @@ public class MänguKontrollija {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Eksami päev!");
         alert.setHeaderText("EKSAMI PÄEV ON KÄES!");
-        alert.setContentText("Sinu lõplikud statistikud:\n" + õpilane.getStatsText());
+        alert.setContentText("Sinu lõplik seisund:\n" + õpilane.getStatsText());
         alert.showAndWait();
     }
 

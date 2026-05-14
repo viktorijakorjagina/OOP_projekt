@@ -8,7 +8,7 @@ public class NõuandeGeneraator {
     // Nõuanded
     private String[] nõuanded = {
             "Kui professor küsib, ütle et õppisid. Tõestust ei nõua keegi.",
-            "Õppimine on hea, aga magamine om parem. Valik on sinu.",
+            "Õppimine on hea, aga magamine on parem. Valik on sinu.",
             "Mõned inimesed õpivad päev enne eksamit. Sina oled erilisem.",
             "Ära muretse. Muretsemine võtab aega, mida võiks veeta Netflixis.",
             "Kui eksam on raske, süüdista professorit.",
