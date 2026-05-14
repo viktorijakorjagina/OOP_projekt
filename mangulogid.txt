@@ -383,3 +383,5 @@ Päev 3, valik 3: Ainult üks episood | teadmised 0, enesekindlus -5. Vaatasid a
 Päev 3 lõppes.
 LÕPPTULEMUS: hhhh - 15 punkti.
 SA KUKKUSID EKSAMI LÄBI...
+
+UUS MÄNG: asdaw

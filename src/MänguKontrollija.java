@@ -28,7 +28,7 @@ public class MänguKontrollija {
     }
 
     // Näitab algusakent
-    public void naitaAlgusAkent() {
+    public void näitaAlgusAkent() {
         AlgusVaade algusVaade = new AlgusVaade(this);
         Scene stseen = algusVaade.looStseen();
         lava.setTitle("Eksami simulaator");
@@ -294,7 +294,7 @@ public class MänguKontrollija {
         päevaNr = 1;
         valikNr = 1;
 
-        naitaAlgusAkent();
+        näitaAlgusAkent();
     }
 
     // Näitab hoiatusakent
