@@ -91,8 +91,11 @@ Olulisemad meetodid: `taustaStiil(VBox juur)` - lisab aknale tausta; `pealkiri(L
 ### 1. etapp - ideede genereerimine ja planeerimine
 Esimeses kohtumises arutati võimalikke projektiteemasid. Otsustati luua humoorika suhtumisega üliõpilassimulatsioon, kuna see võimaldas kasutada kõiki nõutavaid programmeerimismõisteid ning tundus mõlemale rühmaliikmetele huvitav ja motiveeriv. Pandi paika programmi üldine kontseptsioon: 3 mängupäeva, 2 näitajat (teadmised ja enesekindlus) ning lõplik eksam juhusliku õnneteguriga. Koostati programmi struktuur ning otsustati klasside arv ja nende vastutusalad. Mõlemad rühmaliikmed osalesid selles etapis võrdselt.
 
-### 2. etapp - töö jaotamine ja GitHub-i seadistamine
-Lepiti kokku tööjaotuses. Viktorija võttis endale klassid Tegevus, NõuandeGeneraator ja Päev. Maria Elisa võttis endale klassid Õpilane, Eksam ja Peaklass. Seadistati ühine GitHub-i repositoorium, kus Viktorija töötas branchi`s "viktoria" ja Maria Elisa branchi`s "mariaelisa". Kokku lepiti, et rühmaliikmed abistavad teineteist vajadusel ning võivad teha täiendavaid muudatusi üksteise koodis, kui see on vajalik vigade parandamiseks või ühtlustamiseks.
+### 2. etapp – töö jaotamine ja GitHubi seadistamine
+Alguses lepiti kokku tööjaotus ning seadistati ühine GitHubi repositoorium. Viktorija võttis peamiselt enda peale mänguloogikaga seotud klassid: `Tegevus.java`, `TegevusteLooja.java`, `NõuandeGeneraator.java`, `Õpilane.java` ja `FailiHaldur.java`. Maria Elisa tegeles rohkem kasutajaliidese ja eksami kuvamisega seotud klassidega: `EksamiSimulaatorFX.java`, `AlgusVaade.java`, `MänguVaade.java`, `Kujundus.java`, `EksamiArvutaja.java` ja `EksamiTulemus.java`.
+Mõlemad rühmaliikmed osalesid ka `MänguKontrollija.java` arendamises, kuna see klass ühendab kogu programmi loogika ning vajas mitmeid ühiseid arutelusid ja parandusi.
+GitHubis töötas Viktorija harus **"viktoria"** ja Maria Elisa harus **"mariaelisa"**.
+Projekti käigus aidati vajadusel teineteist vigade parandamisel, loogika muutmisel ning kasutajaliidese viimistlemisel.
 
 ### 3. etapp - programmeerimine
 Mõlemad rühmaliikmed kirjutasid oma klassid iseseisvalt, konsulteerides teineteisega tekkinud probleemide korral. Kohtumistel arutati klasside omavahelist suhtlust - näiteks kuidas Päev kasutab Tegevus objekte ning kuidas Peaklass seob kõik klassid ühtseks tervikuks. Muudatuste sünkroonimiseks kasutati regulaarselt käske `git push` ja `git pull`.
@@ -105,11 +108,11 @@ Rühmatöö kirjeldus koostati ühiselt, arutades läbi iga punkti sisu. Mõlema
 
 # Rühmaliikmete panus ja ajakulu
 ### Viktorija Korjagina:
-Tegeles peamiselt mängu loogikaga seotud klassidega: `Tegevus.java`, `TegevusteLooja.java`, `NõuandeGeneraator.java`, `Õpilane.java` ning osales `MänguKontrollija.java` loogika arendamises. Aitas parandada mängu tasakaalu, testida erinevaid tegevusi ning osales dokumentatsiooni koostamisel.
+Tegeles peamiselt mängu loogikaga seotud klassidega: `Tegevus.java`, `TegevusteLooja.java`, `NõuandeGeneraator.java`, `Õpilane.java`, `FailiHaldur.java` ning osales `MänguKontrollija.java` loogika arendamises. Aitas parandada mängu tasakaalu, testida erinevaid tegevusi ning osales dokumentatsiooni koostamisel.
 Ajakulu: orienteeruvalt 14 tundi.
 
 ### Maria Elisa Vassiljeva:
-Tegeles peamiselt kasutajaliidese ja failidega seotud klassidega: `EksamiSimulaatorFX.java`, `AlgusVaade.java`, `MänguVaade.java`, `FailiHaldur.java`, `Kujundus.java`, `EksamiArvutaja.java`, `EksamiTulemus.java` ning osales programmi testimisel ja dokumentatsiooni koostamisel.
+Tegeles peamiselt kasutajaliidese ja failidega seotud klassidega: `EksamiSimulaatorFX.java`, `AlgusVaade.java`, `MänguVaade.java`, `Kujundus.java`, `EksamiArvutaja.java`, `EksamiTulemus.java` ning osales programmi testimisel ja dokumentatsiooni koostamisel.
 Ajakulu: orienteeruvalt 14 tundi.
 
 # Tehisintellekti kasutamise kirjeldus
