@@ -28,56 +28,64 @@ Programm salvestab mängu logi tekstifaili ning käivitamisel näidatakse kasuta
 8. Pärast mängu lõppu saab vajutada nuppu "Alusta uuesti".
 
 # Klasside kirjeldus
-### Peaklass.java
-`Peaklass` on programmi käivituspunkt, mis sisaldab meetodit `main()`. See korraldab kogu mängu üldise kulgu: kuvab tervitussõnumi, küsib mängija nime, loob `Õpilane` ja `NõuandeGeneraator` objektid, käivitab 3 päeva tsükli ning kutsub lõpuks välja eksami. Peaklass ühendab kõik teised klassid ühtseks tervikuks.
-Olulisemad osad: `main()` meetod kogu mängu juhtimiseks, `JOptionPane.showInputDialog()` nime küsimiseks, for-tsükkel 3 päeva läbimiseks, Eksam objekti loomine ning eksami käivitamine.
-
-### Õpilane.java
-Klass `Õpilane` esindab mängijat ning hoiab tema andmeid. Klassil on kolm isendivälja: nimi (mängija nimi), teadmised (tegelikud teadmised, mis mõjutavad eksami tulemust) ja enesekindlus (mängija hinnang oma valmisolekule). Mõlemad punktinäitajad algavad nullist ega lange alla nulli.
-Olulisemad meetodid: `Õpilane(String nimi)` - konstruktor, mis loob uue mängija objekti; `getNimi()`, `getTeadmised()`, `getEnesekindlus()`, `getÕppimisJärjestus()` - getterid väljade lugemiseks; `lisaTeadmised(int kogus)` - suurendab teadmiste näitajat, tagades et see ei lange alla nulli; `lisaEnesekindlus(int kogus)` - muudab enesekindluse näitajat, tagades et see ei lange alla nulli; `getStatsText()` - tagastab mängija hetkeseisu tekstina kuvamiseks aknas.
-
-### Tegevus.java
-Klass `Tegevus` esindab ühte tegevust, mida mängija saab valida (näiteks õppimine või puhkamine). Igal tegevusel on nimi, kirjeldus, teadmiste muutuse vahemik (minimaalne ja maksimaalne väärtus) ning fikseeritud enesekindluse muutus. Teadmiste kasv on juhuslik - iga kord võib tulemus olla erinev.
-Olulisemad meetodid: `Tegevus(String nimi, String kirjeldus, int minTeadmised, int maxTeadmised, int enesekindlusMuutus)` - konstruktor; `getNimi()`, `getKirjeldus()` - getterid; `getTeadmistekasv()` - arvutab juhusliku teadmiste kasvu lubatud vahemikus, kasutades klassi `Random`; `getEnesekindlusMuutus()` - tagastab fikseeritud enesekindluse muutuse.
-
-### Päev.java
-Klass `Päev` korraldab ühe mängupäeva kulgu. See loob kõik 5 võimalikku tegevust, kuvab mängijale valikuakna ning töötleb sisestuse. Klass jälgib ka õppimise järjestust - kui mängija valib "Õppimine" 3 korda järjest, blokeeritakse see valik. Valikul 4 ("Ainult üks episood") on eriefekt: klassi `Random` abil otsustatakse, mitu episoodi mängija tegelikult vaatab (1, 2 või 3), mis mõjutab enesekindluse näitajat täiendavalt.
-Olulisemad meetodid: `Päev(int päevaNr)` - konstruktor, mis loob päeva objekti ja seadistab kõik `Tegevus` objektid massiivis; `käivitaPaev(Õpilane õpilane)` - käivitab päeva, kordab 3 korda valikuringi ning tagastab päeva koondtulemused; `teeÜksTegevus(Õpilane õpilane, int valikNr)` - privaatne meetod, mis kuvab valikuakna, loeb ja kontrollib mängija sisestust, rakendab valitud tegevuse tulemuse mängijale ning uuendab õppimise järjestuse loenduri.
-
-### Eksam.java
-Klass `Eksam` korraldab mängu lõpliku eksami. Eksami tulemus arvutatakse kolme teguri põhjal: kogutud teadmised, enesekindluse boonus (enesekindlus / 5) ning juhuslik õnnetegur (vahemikus -20 kuni +20). Eksami läbimiseks on vajalik saavutada vähemalt 50 punkti. Sõltuvalt tulemusest ja selle saavutamise viisist kuvatakse erinev lõpusõnum.
-Olulisemad meetodid: `sooritaEksam(Õpilane õpilane)` - viib läbi kogu eksami: kuvab eelinfot, arvutab lõpliku tulemuse, näitab punktide jaotust ning lõpptulemust; `getLabimiseSõnum(int teadmised, int õnn)` - tagastab sobiva läbimissõnumi vastavalt sellele, kuidas mängija eksami läbis; `getLabikukkumiseSõnum(int teadmised, int õnn)` - tagastab sobiva läbikukkumissõnumi vastavalt ebaõnnestumise põhjusele.
-
-### NõuandeGeneraator.java
-Klass `NõuandeGeneraator` kuvab mängijale iga päeva alguses juhusliku nõuande. Klassil on 12 erineva sisuga nõuannet sisaldav massiiv. Iga päeva alguses valitakse klassi `Random` abil üks nõuanne juhuslikult ning kuvatakse mängijale hüpikaknas.
-Olulisemad meetodid: `NõuandeGeneraator()` - konstruktor; `getNõuanne()` - tagastab juhusliku nõuande massiivist, kasutades meetodit `random.nextInt(nõuanded.length)`.
 
 ### EksamiSimulaatorFX.java
-See on programmi uus peaklass teises etapis. Klass käivitab JavaFX rakenduse ning avab algusakna. Olulisem meetod on `start()`, mis loob `MänguKontrollija` objekti ja käivitab programmi.
+`EksamiSimulaatorFX` on teise etapi programmi peaklass. See käivitab JavaFX rakenduse ja loob `MänguKontrollija` objekti.
 
 ### MänguKontrollija.java
-See klass juhib kogu mängu loogikat ning ühendab kõik teised klassid omavahel. Klass kontrollib päevade arvu, töötleb mängija valikuid, uuendab statistikat ja käivitab eksami. Samuti võimaldab see pärast mängu lõppu uut mängu alustada.
+`MänguKontrollija` juhib kogu JavaFX-versiooni mänguloogikat ning ühendab omavahel vaated, mängija, tegevused, faili kirjutamise ja eksami arvutamise. Klass töötleb mängija valikuid, uuendab teadmisi ja enesekindlust, kontrollib õppimise järjestust, liigub päevade vahel ning käivitab eksami.
 
-### MänguVaade.java
-See klass loob peamise mänguakna JavaFX abil. Siin kuvatakse nupud, progressiribad, mängu logi ning mängija statistika. Klass töötleb ka klaviatuuriga tehtud tegevusvalikuid.
+Olulisemad meetodid: `naitaAlgusAkent()` - avab algusakna; `alustaMangu(String nimi)` - kontrollib nime, loob `Õpilane` objekti ja alustab mängu; `teeValik(int valik)` - töötleb mängija tegevusvalikut; `liiguEdasi()` - liigub järgmise valiku, päeva või eksamini; `sooritaEksam()` - käivitab eksami arvutamise ja kuvab tulemuse; `uuendaEkraani()` - uuendab JavaFX aknas kuvatavaid andmeid.
 
 ### AlgusVaade.java
-See klass loob programmi algusakna. Kasutaja sisestab siin oma nime ning saab näha eelmise mängu viimast logirida.
+`AlgusVaade` loob programmi esimese JavaFX akna. Selles aknas kuvatakse mängu lühitutvustus, kasutaja saab sisestada oma nime ning näeb viimast logirida eelmisest mängust. Klass tegeleb ainult algusakna kujunduse ja selle sündmustega.
 
-### FailiHaldur.java
-See klass tegeleb failidega. Klass kirjutab mängu logi tekstifaili ning loeb sealt andmeid programmi käivitamisel.
+Olulisemad meetodid: `AlgusVaade(MänguKontrollija kontrollija)` - konstruktor, mis salvestab viite kontrollijale; `looStseen()` - loob ja tagastab algusakna `Scene` objekti.
 
-### EksamiArvutaja.java
-See klass arvutab lõpliku eksamitulemuse teadmiste, enesekindluse ja õnneteguri põhjal.
+### MänguVaade.java
+`MänguVaade` loob JavaFX abil peamise mänguakna. Seal kuvatakse mängija statistika, progressiribad, tegevusnupud ja mängu logi. Klass töötleb hiirega nupuvajutusi ja klaviatuuriga tehtud valikuid, kuid mängu arvutused tehakse `MänguKontrollija` klassis.
 
-### EksamiTulemus.java
-See klass hoiab eksami lõpptulemuse andmeid ning tagastab sobiva lõpusõnumi.
+Olulisemad meetodid: `MänguVaade(MänguKontrollija kontrollija)` - konstruktor; `looStseen()` - loob põhilise mänguakna; `uuendaAndmeid(Õpilane õpilane, int päevaNr, int valikNr, String nõuanne)` - uuendab ekraanil kuvatavaid andmeid; `lisaLogiRida(String rida)` - lisab ühe rea logialasse; `keelaNupud()` - keelab nupud pärast mängu lõppu.
 
-### Kujundus.java
-See klass sisaldab JavaFX kujunduse meetodeid. Siin määratakse nuppude, tausta ja teiste visuaalsete elementide stiil.
+### Õpilane.java
+`Õpilane` esindab mängijat ning hoiab tema andmeid. Klassil on väljad `nimi`, `teadmised`, `enesekindlus` ja `õppimisJärjestus`. Teadmised ja enesekindlus algavad nullist ega lange alla nulli. Õppimisjärjestust kasutatakse selleks, et blokeerida õppimine, kui mängija valib seda liiga mitu korda järjest.
+
+Olulisemad meetodid: `Õpilane(String nimi)` - loob uue mängija; `getNimi()`, `getTeadmised()`, `getEnesekindlus()`, `getÕppimisJärjestus()` - tagastavad mängija andmed; `setÕppimisJärjestus(int õppimisJärjestus)` - muudab õppimise järjestust; `lisaTeadmised(int n)` - muudab teadmisi; `lisaEnesekindlus(int n)` - muudab enesekindlust; `getStatsText()` - tagastab hetkeseisu tekstina.
+
+### Tegevus.java
+`Tegevus` esindab ühte tegevust, mida mängija saab valida. Igal tegevusel on nimi, kirjeldus, teadmiste kasvu vahemik ja enesekindluse muutus. Teadmiste kasv arvutatakse juhuslikult lubatud vahemikus.
+
+Olulisemad meetodid: `Tegevus(String nimi, String kirjeldus, int minTeadmised, int maxTeadmised, int enesekindlusMuutus)` - konstruktor; `getNimi()` - tagastab tegevuse nime; `getKirjeldus()` - tagastab tegevuse kirjelduse; `getTeadmistekasv()` - arvutab juhusliku teadmiste kasvu; `getEnesekindlusMuutus()` - tagastab enesekindluse muutuse.
 
 ### TegevusteLooja.java
-See klass loob kõik mängus kasutatavad tegevused ning tagastab need massiivina.
+`TegevusteLooja` loob kõik mängus kasutatavad tegevused ja tagastab need massiivina. See klass on eraldi selleks, et tegevuste nimekiri ei muudaks `MänguKontrollija` klassi liiga pikaks.
+
+Olulisemad meetodid: `looTegevused()` - loob ja tagastab `Tegevus[]` massiivi.
+
+### NõuandeGeneraator.java
+`NõuandeGeneraator` annab mängijale juhusliku nõuande. Klass sisaldab nõuannete massiivi ning valib sealt `Random` abil ühe teksti.
+
+Olulisemad meetodid: `NõuandeGeneraator()` - konstruktor; `getNõuanne()` - tagastab juhusliku nõuande.
+
+### EksamiArvutaja.java
+`EksamiArvutaja` arvutab mängu lõpliku eksamitulemuse. Tulemus sõltub õpilase teadmistest, enesekindluse boonusest ja juhuslikust õnnetegurist vahemikus -20 kuni +20.
+
+Olulisemad meetodid: `arvutaTulemus(Õpilane õpilane)` - arvutab eksami tulemuse ja tagastab `EksamiTulemus` objekti.
+
+### EksamiTulemus.java
+`EksamiTulemus` hoiab eksami arvutatud tulemuse andmeid: teadmised, enesekindluse boonus, õnnetegur, lõplik skoor ja tulemuse tekst. Klass teeb tulemuse kuvamise lihtsamaks, sest kõik eksamiga seotud andmed on ühes objektis.
+
+Olulisemad meetodid: `EksamiTulemus(...)` - konstruktor; `getLõplikSkoor()` - tagastab lõpliku skoori; `getTulemusTekst()` - tagastab lühikese tulemuse teksti; `getÕnn()` - tagastab õnneteguri; `getTäisTekst()` - tagastab tulemuse pikema kirjelduse.
+
+### FailiHaldur.java
+`FailiHaldur` tegeleb faili lugemise ja kirjutamisega. Programm kirjutab mängu käigud logifaili ning loeb programmi käivitamisel failist viimase rea, et näidata eelmise mängu infot.
+
+Olulisemad meetodid: `kirjutaLogisse(String tekst)` - kirjutab ühe rea logifaili; `loeViimaneRida()` - loeb failist viimase rea; `alustaUutMangu(String nimi)` - lisab faili uue mängu alguse.
+
+### Kujundus.java
+`Kujundus` sisaldab JavaFX kasutajaliidese stiilimeetodeid. Klass määrab tausta, nuppude, pealkirjade ja kaartide välimuse. Eraldi kujundusklass aitab vältida korduvat `setStyle()` koodi vaadete klassides.
+
+Olulisemad meetodid: `taustaStiil(VBox juur)` - lisab aknale tausta; `pealkiri(Label label)` - kujundab suure pealkirja; `tavalineTekst(Label label)` - kujundab tavalise teksti; `nupp(Button nupp)` - kujundab tegevusnupu; `rohelineNupp(Button nupp)` - kujundab alustamise nupu; `kaart(Region region)` - lisab valge kaardi stiili.
 
 # Projekti tegemise protsess
 ### 1. etapp - ideede genereerimine ja planeerimine
