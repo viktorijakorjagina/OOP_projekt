@@ -13,7 +13,7 @@ public class Kujundus {
     }
     public static void pealkiri(Label label) {
         label.setStyle(
-                "-fx-font-size: 32px;" +
+                "-fx-font-size: 34px;" +
                         "-fx-font-weight: bold;" +
                         "-fx-text-fill: #2d2457;"
         );
@@ -50,6 +50,14 @@ public class Kujundus {
                         "-fx-background-radius: 18;" +
                         "-fx-padding: 20;" +
                         "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.16), 14, 0, 0, 5);"
+        );
+    }
+
+    public static void valikudPealkiri(Label label) {
+        label.setStyle(
+                "-fx-font-size: 24px;" +
+                        "-fx-font-weight: bold;" +
+                        "-fx-text-fill: #2d2457;"
         );
     }
 }

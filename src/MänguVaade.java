@@ -43,9 +43,7 @@ public class MänguVaade {
         statsLabel = new Label();
 
         nõuanneLabel = new Label();
-
-        // Lubame nõuande tekstil minna mitmele reale
-        nõuanneLabel.setWrapText(true);
+        nõuanneLabel.setWrapText(true);  // Lubame nõuande tekstil minna mitmele reale
         nõuanneLabel.setMaxWidth(480);
 
         Kujundus.tavalineTekst(infoLabel);
@@ -72,6 +70,7 @@ public class MänguVaade {
         logiAla = new TextArea();
         logiAla.setEditable(false);
         logiAla.setWrapText(true);
+        logiAla.setPrefHeight(180);
 
         VBox vasakPool = looVasakPool();
         VBox paremPool = looParemPool(nuppudeKast);
@@ -79,9 +78,9 @@ public class MänguVaade {
         HBox sisu = new HBox(20, vasakPool, paremPool);
         sisu.setPadding(new Insets(25));
 
-        // Akna suuruse muutumisel sisu venitamine
-        HBox.setHgrow(vasakPool, Priority.ALWAYS);
-        HBox.setHgrow(paremPool, Priority.ALWAYS);
+        vasakPool.setPrefWidth(320);
+        paremPool.setPrefWidth(500);
+        HBox.setHgrow(paremPool, Priority.ALWAYS); // Akna suuruse muutumisel sisu venitamine
 
         VBox juur = new VBox(sisu);
         VBox.setVgrow(sisu, Priority.ALWAYS);
@@ -95,9 +94,11 @@ public class MänguVaade {
 
     // Loob mänguakna parema poole
     private VBox looParemPool(VBox nuppudeKast) {
+        Label valikudPealkiri = new Label("Mida teed?");
+        Kujundus.valikudPealkiri(valikudPealkiri);
         VBox paremPool = new VBox(
-                14,
-                new Label("Valikud:"),
+                22,
+                valikudPealkiri,
                 nuppudeKast,
                 new Label("Mängu logi:"),
                 logiAla
@@ -121,8 +122,7 @@ public class MänguVaade {
                 statsLabel
         );
 
-        // Vasak pool saab kindlama laiuse, et nõuanne mahuks paremini ära
-        vasakPool.setMinWidth(420);
+        vasakPool.setMinWidth(200);
 
         Kujundus.kaart(vasakPool);
         return vasakPool;
@@ -146,7 +146,6 @@ public class MänguVaade {
         ülesandedNupp.setOnAction(e -> kontrollija.teeValik(3));
         netflixNupp.setOnAction(e -> kontrollija.teeValik(4));
         puhkusNupp.setOnAction(e -> kontrollija.teeValik(5));
-
         // Kui mäng on lõppenud, saab selle nupuga minna tagasi algusaknasse
         uuestiNupp.setOnAction(e -> kontrollija.alustaUuesti());
     }
@@ -155,7 +154,7 @@ public class MänguVaade {
     private Button looValikuNupp(String tekst) {
         Button nupp = new Button(tekst);
         nupp.setMaxWidth(Double.MAX_VALUE);
-        nupp.setPrefHeight(45);
+        nupp.setPrefHeight(60);
         Kujundus.nupp(nupp);
         return nupp;
     }
